@@ -74,7 +74,7 @@ int tagger_context_add_to_lexicon_tags( TaggerContext *tc, const char *bigram )
   return Registry_add(tc->lexicon_tag_hash, (VOIDP)strdup(bigram), (VOIDP)1);
 }
 
-void tagger_context_add_to_lexicon_rules( TaggerContext *tc, const char *rule )
+void tagger_context_add_lexical_rule( TaggerContext *tc, const char *rule )
 {
   trans_rule *r = parse_lexical_rule(rule);
   Darray_addh(tc->rule_array, r);
@@ -84,4 +84,19 @@ void tagger_context_add_contextual_rule( TaggerContext *tc, const char *rule )
 {
   trans_rule *r = parse_contextual_rule(rule);
   Darray_addh(tc->contextual_rule_array, r);
+}
+
+int tagger_context_add_word_to_wordlist( TaggerContext *tc, const char *word )
+{
+  return Registry_add(tc->wordlist_hash, (VOIDP)strdup(word), (VOIDP)1);
+}
+
+int tagger_context_add_goodleft( TaggerContext *tc, const char *word )
+{
+  return Registry_add(tc->good_left_hash, (VOIDP)strdup(word), (VOIDP)1);
+}
+
+int tagger_context_add_goodright( TaggerContext *tc, const char *word )
+{
+  return Registry_add(tc->good_right_hash, (VOIDP)strdup(word), (VOIDP)1);
 }

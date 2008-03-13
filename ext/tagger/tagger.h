@@ -31,8 +31,11 @@ void tagger_context_free( TaggerContext *tc );
 
 int tagger_context_add_to_lexicon( TaggerContext *tc, const char *word, const char *tag );
 int tagger_context_add_to_lexicon_tags( TaggerContext *tc, const char *bigram );
-void tagger_context_add_to_lexicon_rules( TaggerContext *tc, const char *rule );
+void tagger_context_add_lexical_rule( TaggerContext *tc, const char *rule );
 void tagger_context_add_contextual_rule( TaggerContext *tc, const char *rule );
+int tagger_context_add_word_to_wordlist( TaggerContext *tc, const char *word );
+int tagger_context_add_goodleft( TaggerContext *tc, const char *word );
+int tagger_context_add_goodright( TaggerContext *tc, const char *word );
 
 
 #ifdef __cplusplus
