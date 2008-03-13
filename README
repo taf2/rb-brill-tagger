@@ -1,0 +1,7 @@
+A Simple Ruby Rule-Based Part of Speech Tagger
+
+This work is based on the work of Eric Brill
+
+Credit for extracting Eric's work into a reusable library goes to Ken Williams as part of his work in creating the Lingua::BrillTagger perl module
+
+This software is made available under the MIT License, see LICENSE
