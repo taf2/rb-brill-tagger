@@ -222,7 +222,7 @@ BrillTagger_apply_contextual_rules( VALUE self, VALUE tokens, VALUE tags, VALUE 
   return Qnil;
 }
 
-void Init_tagger()
+void Init_rule_tagger()
 {
   rb_Tagger = rb_define_module( "Tagger" );
   rb_BrillTagger = rb_define_class_under( rb_Tagger, "BrillTagger", rb_cObject );

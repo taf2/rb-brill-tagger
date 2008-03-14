@@ -1,4 +1,4 @@
-require 'tagger'
+require 'rule_tagger'
 
 module Brill
   class Tagger

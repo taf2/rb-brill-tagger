@@ -18,8 +18,8 @@ desc "Does a full compile, test run"
 task :default => [:compile, :test]
 
 desc "Compiles all extensions"
-task :compile => [:tagger] do
-  if Dir.glob(File.join("lib","tagger.*")).length == 0
+task :compile => [:rule_tagger] do
+  if Dir.glob(File.join("lib","rule_tagger.*")).length == 0
     STDERR.puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     STDERR.puts "Gem actually failed to build.  Your system is"
     STDERR.puts "NOT configured properly to build Tagger."
@@ -28,11 +28,11 @@ task :compile => [:tagger] do
   end
 end
 
-setup_extension("tagger", "tagger")
+setup_extension("rule_tagger", "rule_tagger")
 
 task :package => [:clean,:compile,:test,:rerdoc]
 
-name="tagger"
+name="rule_tagger"
 version="0.0.1"
 
 setup_gem(name, version) do |spec|
@@ -40,7 +40,6 @@ setup_gem(name, version) do |spec|
   spec.description = spec.summary
   spec.test_files = Dir.glob('test/test_*.rb')
   spec.author="Todd A. Fisher"
-  spec.executables=['tagger']
   spec.files += %w(COPYING LICENSE README Rakefile setup.rb)
 
   spec.required_ruby_version = '>= 1.8.5'
