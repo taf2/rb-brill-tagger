@@ -45,7 +45,7 @@ Although many newly diagnosed patients fear they will not be able to keep workin
       count += 1
     end
     duration = Time.now - timer
-    puts "time: #{duration} sec #{duration/count.to_f} docs/sec"
+    puts "time: #{duration} sec #{count.to_f/duration} docs/sec"
   end
 
 private
