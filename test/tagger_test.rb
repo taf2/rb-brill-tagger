@@ -3,6 +3,11 @@ $:.unshift File.join(File.dirname(__FILE__), "..", "..", "lib")
 $:.unshift File.join(File.dirname(__FILE__), "..", "..", "ext")
 
 require 'brill/tagger'
+puts "loading tagger..."
+$tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
+                             File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
+                             File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
+puts "tagger loaded!"
 
 class TaggerTest < Test::Unit::TestCase
 SAMPLE_DOC=%q(
@@ -28,11 +33,23 @@ Stay connected
 Although many newly diagnosed patients fear they will not be able to keep working during treatment, this is usually not the case. Working, even at a reduced schedule, helps you maintain valuable social connections and weekly structure.
 )
   def test_simple_tagger
-    tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
-                                File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
-                                File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
     pairs = tagger.tag( SAMPLE_DOC )
     puts pairs.inspect
+  end
 
+  def test_multiple_docs
+    timer = Time.now
+    count = 0
+    Dir["#{File.dirname(__FILE__)}/docs/doc*"].each do|doc|
+      tagger.tag( File.read( doc ) )
+      count += 1
+    end
+    duration = Time.now - timer
+    puts "time: #{duration} sec #{duration/count.to_f} docs/sec"
+  end
+
+private
+  def tagger
+    $tagger
   end
 end
