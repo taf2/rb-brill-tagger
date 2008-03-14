@@ -97,6 +97,9 @@ BrillTagger_apply_lexical_rules( VALUE self, VALUE tokens, VALUE tags, VALUE wor
   Darray text_array = Darray_create();
   Darray tag_array  = Darray_create();
 
+  Darray_hint( text_array, token_length, token_length );
+  Darray_hint( tag_array, token_length, token_length );
+
   for( i = 0; i < token_length; ++i ){
     fetched = rb_ary_entry(tokens,i);
     if( fetched == Qnil ){

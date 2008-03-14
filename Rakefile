@@ -10,7 +10,7 @@ include FileUtils
 
 setup_tests
 
-setup_clean ["ext/tagger/*.{bundle,so,obj,pdb,lib,def,exp}", "ext/tagger/Makefile", "pkg", "lib/*.bundle", "*.gem", "doc/site/output", ".config"]
+setup_clean ["ext/rule_tagger/*.{bundle,so,obj,pdb,lib,def,exp}", "ext/rule_tagger/Makefile", "pkg", "lib/*.bundle", "*.gem", "doc/site/output", ".config"]
 
 setup_rdoc ['README', 'LICENSE', 'COPYING', 'lib/**/*.rb', 'doc/**/*.rdoc', 'ext/**/*.{h,c,rl}']
 

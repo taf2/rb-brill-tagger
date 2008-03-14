@@ -1,6 +1,6 @@
 require 'test/unit'
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", "lib")
-$:.unshift File.join(File.dirname(__FILE__), "..", "..", "ext")
+$:.unshift File.join(File.dirname(__FILE__), "..", "lib")
+$:.unshift File.join(File.dirname(__FILE__), "..", "ext")
 
 require 'brill/tagger'
 puts "loading tagger..."
