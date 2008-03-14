@@ -2,110 +2,37 @@ require 'test/unit'
 $:.unshift File.join(File.dirname(__FILE__), "..", "..", "lib")
 $:.unshift File.join(File.dirname(__FILE__), "..", "..", "ext")
 
-require 'tagger'
-
-module Tagger
-  class Rules
-    def self.lines( file )
-      lines = []
-      File.open(file,'r') do|f|
-        lines = f.readlines
-      end
-      lines
-    end
-    # load LEXICON 
-    def self.load_lexicon(tagger,lexicon)
-      lines = self.lines(lexicon)
-      i = 0
-      count = lines.size
-      while i < count
-        line = lines[i]
-        #puts "line: #{line.inspect}:#{i.inspect}"
-        parts = line.split(/\s/)
-        #puts "word: #{word.inspect}, tags: #{tags.inspect}"
-        word = parts.first
-        tags = parts[1..-1]
-        tagger.add_to_lexicon(word,tags.first)
-        #puts "#{word} => #{tags.inspect}"
-        tags.each do|tag|
-          tagger.add_to_lexicon_tags("#{word} #{tag}")
-        end
-        i += 1
-      end
-    end
-
-    # load LEXICALRULEFILE 
-    def self.load_lexical_rules(tagger,rules)
-      lines = self.lines(rules)
-      i = 0
-      count = lines.size
-=begin
-  # original perl
-    chomp;
-    my @line = split or next;
-    $self->_add_lexical_rule($_);
-
-    if ($line[1] eq 'goodright') {
-      $self->_add_goodright($line[0]);
-    } elsif ($line[2] eq 'fgoodright') {
-      $self->_add_goodright($line[1]);
-    } elsif ($line[1] eq 'goodleft') {
-      $self->_add_goodleft($line[0]);
-    } elsif ($line[2] eq 'fgoodleft') {
-      $self->_add_goodleft($line[1]);
-    }
-=end
-      while i < count
-        line = lines[i].chomp
-        cols = line.split(/\s/)
-        next unless line.size > 0
-        tagger.add_lexical_rule(line)
-        if cols[1] == 'goodright'
-          tagger.add_goodright(cols[0])
-        elsif cols[2] == 'fgoodright'
-          tagger.add_goodright(cols[1])
-        elsif cols[1] == 'goodleft'
-          tagger.add_goodleft(cols[0])
-        elsif cols[2] == 'fgoodleft'
-          tagger.add_goodleft(cols[1])
-        end
-
-        i += 1
-      end
-    end
-
-    # load CONTEXTUALRULEFILE
-    def self.load_contextual_rules(tagger,rules)
-      lines = self.lines(rules)
-      i = 0
-      count = lines.size
-      while i < count
-        line = lines[i].chomp
-        next unless line.size > 0
-        tagger.add_contextual_rule(line);
-        i += 1
-      end
-    end
-
-    def self.tag_start(text)
-    end
-
-    def self.tokenize(text)
-      # Normalize all whitespace
-      text.gsub!(/\s+/,' ')
-    end
-
-  end
-end
+require 'brill/tagger'
 
 class TaggerTest < Test::Unit::TestCase
+SAMPLE_DOC=%q(
+Take an active role in your care
+When it comes to making decisions about the goals and direction of treatment, don't sit back. Work closely and actively with your oncologist and the rest of your medical team.
+Dont overlook clinical trials
+If youre eligible to enroll in clinical trials, select an oncologist who participates in them. Patients who enroll in clinical studies receive closer follow-up, the highest standard-of-care treatment and access to experimental therapies at no extra cost.
+Maximize your nutrition strategy
+Doing your best to eat a healthy, well-balanced diet is vital to prompt healing after surgery and for recovery from radiation or chemotherapy. Many oncology practices employ registered dieticians who can help you optimize your nutrition.
+Steer clear of "natural cures"
+Before trying nutritional supplements or herbal remedies, be sure to discuss your plans with a doctor. Most have not been tested in clinical studies, and some may actually interfere with your treatment.
+Build a stronger body
+Even walking regularly is can help you minimize long-term muscle weakness caused by illness or de-conditioning.
+Focus on overall health
+Patients may be cured of cancer but still face life-threatening medical problems that are underemphasized during cancer treatments, such as diabetes, high blood pressure and heart disease. Continue to monitor your overall health.
+Put the fire out for good
+Smoking impairs healing after surgery and radiation and increases your risk of cardiovascular disease and many types of cancers. Ask your doctor for help identifying and obtaining the most appropriate cessation aids.
+Map a healthy future
+Once youve completed treatment, discuss appropriate follow-up plans with your doctor and keep track of them yourself. Intensified screening over many years is frequently recommended to identify and treat a recurrence early on.
+Share your feelings
+Allow yourself time to discuss the emotional consequences of your illness and treatment with family, friends, your doctor and, if necessary, a professional therapist. Many patients also find antidepressants helpful during treatment.
+Stay connected
+Although many newly diagnosed patients fear they will not be able to keep working during treatment, this is usually not the case. Working, even at a reduced schedule, helps you maintain valuable social connections and weekly structure.
+)
   def test_simple_tagger
-    tagger = Tagger::BrillTagger.new
-    puts "load lexicon..."
-    Tagger::Rules.load_lexicon(tagger,File.join(File.dirname(__FILE__),"LEXICON"))
-    puts "load lexicalrulesfile..."
-    Tagger::Rules.load_lexical_rules(tagger,File.join(File.dirname(__FILE__),"LEXICALRULEFILE"))
-    puts "load contextualrulesfile..."
-    Tagger::Rules.load_contextual_rules(tagger,File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE"))
+    tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
+                                File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
+                                File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
+    pairs = tagger.tag( SAMPLE_DOC )
+    puts pairs.inspect
+
   end
 end

@@ -37,6 +37,7 @@ int tagger_context_add_word_to_wordlist( TaggerContext *tc, const char *word );
 int tagger_context_add_goodleft( TaggerContext *tc, const char *word );
 int tagger_context_add_goodright( TaggerContext *tc, const char *word );
 
+//void tagger_context_apply_lexical_rules( TaggerContext *tc, const char *word );
 
 #ifdef __cplusplus
 }
