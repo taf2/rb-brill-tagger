@@ -1,8 +1,9 @@
 require 'test/unit'
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
-$:.unshift File.join(File.dirname(__FILE__), "..", "ext")
+$:.unshift File.join(File.dirname(__FILE__), "..", "ext", "rule_tagger")
 
 require 'brill/tagger'
+
 puts "loading tagger..."
 $tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
                              File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
@@ -35,6 +36,8 @@ Although many newly diagnosed patients fear they will not be able to keep workin
   def test_simple_tagger
     pairs = tagger.tag( SAMPLE_DOC )
     puts pairs.inspect
+    $tagger = nil
+    ObjectSpace.garbage_collect
   end
 
   def test_multiple_docs

@@ -201,9 +201,9 @@ BrillTagger_apply_contextual_rules( VALUE self, VALUE tokens, VALUE tags, VALUE 
   // load the tokens and tags into the char * arrays
   for( i = 0; i < token_length; ++i ){
     fetched = rb_ary_entry(tokens,i);
-    text_tokens[i] = RSTRING_PTR(fetched);
+    text_tokens[i] = strdup(RSTRING_PTR(fetched));
     fetched = rb_ary_entry(tags,i);
-    text_tags[i] = RSTRING_PTR(fetched);
+    text_tags[i] = strdup(RSTRING_PTR(fetched));
   }
 
   rules_length = Darray_len(tc->contextual_rule_array);
@@ -217,6 +217,8 @@ BrillTagger_apply_contextual_rules( VALUE self, VALUE tokens, VALUE tags, VALUE 
   // load the results back into ruby arrays
   for( i = 0; i < token_length; ++i ){
     rb_ary_store( tags, i, rb_str_new2(text_tags[i]) );
+    free(text_tags[i]);
+    free(text_tokens[i]);
   }
 
   free( text_tags );
