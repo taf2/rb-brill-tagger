@@ -10,3 +10,15 @@ ext/rule_tagger/rules.o
 ext/rule_tagger/tagger.o
 ext/rule_tagger/useful.o
 lib/rule_tagger.bundle
+ext/word_tagger/porter_stemmer.o
+ext/word_tagger/rtagger.bundle
+ext/word_tagger/rtagger.o
+ext/word_tagger/tagger.o
+ext/word_tagger/test/porter_stemmer.c
+ext/word_tagger/test/porter_stemmer.h
+ext/word_tagger/test/porter_stemmer.o
+ext/word_tagger/test/tagger.cc
+ext/word_tagger/test/tagger.h
+ext/word_tagger/test/tagger.o
+ext/word_tagger/test/test.o
+ext/word_tagger/test/testit
