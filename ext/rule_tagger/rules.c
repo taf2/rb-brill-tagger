@@ -17,7 +17,7 @@ void change_the_tag(theentry,thetag,theposition)
   int theposition;
 {
   free(theentry[theposition]);
-  theentry[theposition] = mystrdup(thetag);
+  theentry[theposition] = strdup(thetag);
 }
 
 void change_the_tag_darray(tag_array,theposition,thetag)
@@ -26,7 +26,7 @@ void change_the_tag_darray(tag_array,theposition,thetag)
   char *thetag;
 {
   free(Darray_get(tag_array, theposition));
-  Darray_set(tag_array, theposition, mystrdup(thetag));
+  Darray_set(tag_array, theposition, strdup(thetag));
 }
 
 void rule_destroy(trans_rule *r) {
@@ -53,14 +53,14 @@ trans_rule *parse_lexical_rule (const char *rule_text) {
 
   /* Rule types starting with 'f' have an extra 'old' arg at the beginning */
   if (*split_ptr[2] == 'f') {
-    rule->old = mystrdup(split_ptr[0]);
+    rule->old = strdup(split_ptr[0]);
     offset = 1;
   } else {
     rule->old = NULL;
   }
 
-  rule->arg1 = mystrdup(split_ptr[0 + offset]);
-  rule->when = mystrdup(split_ptr[1 + offset]);
+  rule->arg1 = strdup(split_ptr[0 + offset]);
+  rule->when = strdup(split_ptr[1 + offset]);
 
   /* A few rules have a string-length argument too */
   if (strstr(rule->when, "hassuf")    ||
@@ -69,13 +69,13 @@ trans_rule *parse_lexical_rule (const char *rule_text) {
       strstr(rule->when, "addsuf")    ||
       strstr(rule->when, "deletesuf") ||
       strstr(rule->when, "deletepref")  ) {
-    rule->arg2 = mystrdup(split_ptr[2 + offset]);
+    rule->arg2 = strdup(split_ptr[2 + offset]);
     offset++;
   } else {
     rule->arg2 = NULL;
   }
 
-  rule->new = mystrdup(split_ptr[2 + offset]);
+  rule->new = strdup(split_ptr[2 + offset]);
 
   return rule;
 }
@@ -84,10 +84,10 @@ trans_rule *parse_contextual_rule (const char *rule_text) {
   trans_rule *rule = (trans_rule*) malloc(sizeof(trans_rule));
   char **split_ptr = perl_split(rule_text);
   
-  rule->old  = mystrdup(split_ptr[0]);
-  rule->new  = mystrdup(split_ptr[1]);
-  rule->when = mystrdup(split_ptr[2]);
-  rule->arg1 = mystrdup(split_ptr[3]);
+  rule->old  = strdup(split_ptr[0]);
+  rule->new  = strdup(split_ptr[1]);
+  rule->when = strdup(split_ptr[2]);
+  rule->arg1 = strdup(split_ptr[3]);
 
   /* The following rule-types take an additional argument */
   if (strcmp(rule->when, "SURROUNDTAG")  == 0 ||
@@ -102,7 +102,7 @@ trans_rule *parse_contextual_rule (const char *rule_text) {
       strcmp(rule->when, "WDAND2AFT")    == 0 ||
       strcmp(rule->when, "WDAND2TAGAFT") == 0 )
 
-    rule->arg2 = mystrdup(split_ptr[4]);
+    rule->arg2 = strdup(split_ptr[4]);
   else
     rule->arg2 = NULL;
 
@@ -410,7 +410,7 @@ void apply_lexical_rule(const trans_rule *r,
   char tempstr_space[MAXWORDLEN+MAXAFFIXLEN], bigram_space[MAXWORDLEN*2];
 
   int check_current_tag = (r->when[0] == 'f');
-  char *name = mystrdup( check_current_tag ? &r->when[1] : r->when );
+  char *name = strdup( check_current_tag ? &r->when[1] : r->when );
 
   for (count2=0;count2<Darray_len(tag_array_key);++count2) {
 
@@ -421,7 +421,7 @@ void apply_lexical_rule(const trans_rule *r,
     
     if (strcmp(name, "char") == 0) {
       if(strpbrk(Darray_get(tag_array_key,count2), r->arg1)) {
-	change_the_tag_darray(tag_array_val,count2,r->new);
+        change_the_tag_darray(tag_array_val,count2,r->new);
       }
     }
     else if (strcmp(name, "deletepref") == 0) {
@@ -459,7 +459,7 @@ void apply_lexical_rule(const trans_rule *r,
 	if (rule_text[count3] != r->arg1[count3-tempcount])
 	  break;}
       if (count3 == strlen(rule_text)) {
-	tempstr2 = mystrdup(rule_text);
+	tempstr2 = strdup(rule_text);
 	tempstr2[tempcount] = '\0';
 	if (Registry_get(lexicon_hash,(char *)tempstr2) != NULL ||
 	    (EXTRAWDS &&

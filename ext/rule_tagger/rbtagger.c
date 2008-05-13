@@ -118,7 +118,7 @@ BrillTagger_apply_lexical_rules( VALUE self, VALUE tokens, VALUE tags, VALUE wor
   }
   rules_length = Darray_len(tc->rule_array);
   /* Apply the rules */
-  for( i = 0; i < rules_length; ++i ){
+  for( i = 0; i < rules_length; ++i ) {
     apply_lexical_rule( Darray_get(tc->rule_array, i),
                         text_array, tag_array,
                         tc->lexicon_hash,
@@ -127,11 +127,16 @@ BrillTagger_apply_lexical_rules( VALUE self, VALUE tokens, VALUE tags, VALUE wor
                         EXTRAWDS );
   }
   /* Stuff the results back into the ruby arrays */
-  for( i = 0; i < token_length; ++i ){
-    fetched = rb_str_new2((char*)Darray_get( text_array, i ));
-    rb_ary_store( tokens, i, fetched );
-    fetched = rb_str_new2((char*)Darray_get( tag_array, i ));
-    rb_ary_store( tags, i, fetched );
+  for( i = 0; i < token_length; ++i ) {
+    char *text_strref = (char*)Darray_get( text_array, i );
+    char *tag_strref = (char*)Darray_get( tag_array, i );
+
+    // copy into ruby space
+    rb_ary_store( tokens, i, rb_str_new2(text_strref) );
+    rb_ary_store( tags, i, rb_str_new2( tag_strref ) );
+
+    free( text_strref );
+    free( tag_strref );
   }
 
   Darray_destroy(text_array);
