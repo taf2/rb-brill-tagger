@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "useful.h"
 #include "rules.h"
 #include "lex.h"
@@ -117,7 +119,7 @@ void apply_contextual_rule(const trans_rule *r,
 			   Registry SEENTAGGING
 			  ) {
 
-  char            tempstr[MAXWORDLEN],atempstr2[256];
+  char            atempstr2[256];
 
   int count, tempcount1, tempcount2;
   
@@ -481,8 +483,8 @@ void apply_lexical_rule(const trans_rule *r,
 	change_the_tag_darray(tag_array_val,count2,r->new);}
     }
     else if (strcmp(name,"addpref") == 0) {
-      sprintf(tempstr_space,"%s%s",
-	      r->arg1,Darray_get(tag_array_key,count2));
+      snprintf(tempstr_space,MAXWORDLEN+MAXAFFIXLEN,"%s%s",
+	      (char*)r->arg1,(char*)Darray_get(tag_array_key,count2));
       if (Registry_get(lexicon_hash,(char *)tempstr_space) != NULL
 	  ||
 	  (EXTRAWDS &&
@@ -491,9 +493,9 @@ void apply_lexical_rule(const trans_rule *r,
 	change_the_tag_darray(tag_array_val,count2,r->new);}
     }
     else if (strcmp(name,"addsuf") == 0) {
-      sprintf(tempstr_space,"%s%s",
-	      Darray_get(tag_array_key,count2),
-	      r->arg1);
+      snprintf(tempstr_space,MAXWORDLEN+MAXAFFIXLEN,"%s%s",
+	      (char*)Darray_get(tag_array_key,count2),
+	      (char*)r->arg1);
       if (Registry_get(lexicon_hash,(char *)tempstr_space) != NULL
 	  ||
 	  (EXTRAWDS &&
@@ -502,14 +504,14 @@ void apply_lexical_rule(const trans_rule *r,
 	change_the_tag_darray(tag_array_val,count2,r->new);}
     }
     else if (strcmp(name,"goodleft") == 0) {
-      sprintf(bigram_space,"%s %s",
-	      Darray_get(tag_array_key,count2),r->arg1);
+      snprintf(bigram_space,MAXWORDLEN*2,"%s %s",
+	      (char*)Darray_get(tag_array_key,count2),(char*)r->arg1);
       if (Registry_get(bigram_hash,(char *)bigram_space) != NULL) {
 	
 	change_the_tag_darray(tag_array_val,count2,r->new);}
     }
     else if (strcmp(name,"goodright") == 0) {
-      sprintf(bigram_space,"%s %s",r->arg1,Darray_get(tag_array_key,count2));
+      snprintf(bigram_space,MAXWORDLEN*2,"%s %s",(char*)r->arg1,(char*)Darray_get(tag_array_key,count2));
       if (Registry_get(bigram_hash,(char *)bigram_space) != NULL) {
 
 	change_the_tag_darray(tag_array_val,count2,r->new);}

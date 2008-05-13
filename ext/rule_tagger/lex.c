@@ -1,21 +1,23 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "useful.h"
 #include "lex.h"
+
+int numspaces(char *buf);
+int numchars(char *buf, char achar);
 
 char *append_with_space(w1,w2)
      char *w1,*w2;
 {
   char *result;
   
-  result = 
-    (char *)malloc((strlen(w1) + strlen(w2)+2) * sizeof(char)); 
+  result = (char *)malloc((strlen(w1) + strlen(w2)+2) * sizeof(char)); 
   strcpy(result,w1);
   strcat(result," ");
   strcat(result,w2);
-  return(result); }
-
-
-
+  return(result);
+}
 
 char *append_with_char(w1,w2,w3)
      char *w1,*w2,w3;
@@ -42,7 +44,7 @@ char **perl_split(buf)
   strcpy(temp2,buf);
   return_buf = (char **) malloc(sizeof(char *) * ((numspaces(temp2)+1) + 2));
   return_buf[cntr++] = (char *)strtok(temp2," \t");
-  while (temp = (char *)strtok(NULL," \t")) 
+  while ( (temp = (char *)strtok(NULL," \t")) ) 
 	if (temp != NULL) {
 		return_buf[cntr] = temp;
 		++cntr;}
@@ -84,7 +86,7 @@ char **perl_split_on_char(buf,achar)
   temp2[0] = achar; temp2[1] = '\0';
   return_buf = (char **) malloc(sizeof(char *) * ((numchars(temp3,achar)+1) + 2));
   return_buf[cntr++] = (char *)strtok(temp3,temp2);
-  while (temp = (char *)strtok(NULL,temp2)) 
+  while ( (temp = (char *)strtok(NULL,temp2)) )
 	if (temp != NULL) {
 		return_buf[cntr] = temp;
 		++cntr;}
@@ -112,36 +114,6 @@ char **perl_split_on_nothing(buf)
     return_buf[cntr] = NULL;
     return(return_buf); 
 }
-
-char *perl_explode(buf)
-     char *buf;
-{
-  char *return_buf;
-  int cntr;
- 
-
-  
-  return_buf = (char *) malloc(sizeof(char) * ((strlen(buf)*2)+1));
-  for (cntr = 0; (cntr/2) < strlen(buf); cntr+=2) {
-    return_buf[cntr] = buf[cntr/2];
-    return_buf[cntr+1] = ' '; }
-    return_buf[cntr-1] = '\0';
-    return(return_buf); 
-}
-
-char **perl_free(ptr)
-     char **ptr;
-    
-{
-
-/*  while (ptr[count] != NULL) {
-    free(ptr[count]);
-    count++;
-  }}*/
-
-  free(ptr[0]); }
-
-
 
 int numspaces(buf)
      char *buf;

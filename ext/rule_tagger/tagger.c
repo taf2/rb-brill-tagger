@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include "tagger.h"
 
 TaggerContext *tagger_context_new()
