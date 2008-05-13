@@ -1,0 +1,12 @@
+ext/rule_tagger/Makefile
+ext/rule_tagger/darray.o
+ext/rule_tagger/lex.o
+ext/rule_tagger/memory.o
+ext/rule_tagger/mkmf.log
+ext/rule_tagger/rbtagger.o
+ext/rule_tagger/registry.o
+ext/rule_tagger/rule_tagger.bundle
+ext/rule_tagger/rules.o
+ext/rule_tagger/tagger.o
+ext/rule_tagger/useful.o
+lib/rule_tagger.bundle
