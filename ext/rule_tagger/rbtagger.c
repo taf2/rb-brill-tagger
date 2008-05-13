@@ -107,14 +107,14 @@ BrillTagger_apply_lexical_rules( VALUE self, VALUE tokens, VALUE tags, VALUE wor
       rb_raise(rb_eArgError, "Token was missing unexpectedly");
       return Qnil;
     }
-    Darray_addh(text_array, (VOIDP)strdup(RSTRING(fetched)->ptr) );
+    Darray_addh(text_array, (VOIDP)strdup(RSTRING_PTR(fetched)) );
     fetched = rb_ary_entry(tags,i);
     if( fetched == Qnil ){
       fprintf(stderr, "tag missing %d of %d\n", i, token_length );
       rb_raise(rb_eArgError, "Tag was missing unexpectedly");
       return Qnil;
     }
-    Darray_addh(tag_array, (VOIDP)strdup(RSTRING(fetched)->ptr) );
+    Darray_addh(tag_array, (VOIDP)strdup(RSTRING_PTR(fetched)) );
   }
   rules_length = Darray_len(tc->rule_array);
   /* Apply the rules */
