@@ -23,7 +23,7 @@ static std::vector<std::string> word_split(const std::string& s)
 {
   std::string words = s;
   // convert all non alpha characters to spaces
-  for( int i = 0; i < words.length(); ++i ) { 
+  for( size_t i = 0; i < words.length(); ++i ) { 
     if( !isalpha( words[i] ) ) {
       words[i] = ' '; // convert to space
     }
@@ -143,7 +143,7 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
         break;
       }
     }
-  } while( sorted_tags.size() > max && mloc != sorted_tags.end() );
+  } while( sorted_tags.size() > (size_t)max && mloc != sorted_tags.end() );
 
   for( size_t i = 0; i < sorted_tags.size(); ++i ) {
     reduced_tags.push_back( sorted_tags[i].first );

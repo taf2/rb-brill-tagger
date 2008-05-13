@@ -359,7 +359,7 @@ static void step5(struct stemmer * z)
 extern int porter_stem(struct stemmer * z, const char * b, int k)
 {
    if (k <= 1) return k; /*-DEPARTURE-*/
-   z->b = b; z->k = k; /* copy the parameters into z */
+   z->b = (char*)b; z->k = k; /* copy the parameters into z */
 
    /* With this line, strings of length 1 or 2 don't go through the
       stemming process, although no mention is made of this in the

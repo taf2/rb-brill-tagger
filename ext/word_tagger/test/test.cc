@@ -39,7 +39,7 @@ void TestBase::overflow()
   std::string words( "hello fitness fitness fitness party dreaming dreaming of their world how are you all doing today so many times I ve seen or heard a delightful story or tales" );
   std::vector<std::string> matched_tags = tagger.execute( words.c_str(), 2 ); 
   
-  printf( "%ld tags\n", matched_tags.size() );
+  printf( "%ld tags\n", (long int)matched_tags.size() );
   for( size_t i = 0; i < matched_tags.size(); ++i ){
     printf( "tagged: %s\n", matched_tags[i].c_str() ); 
   }
@@ -75,7 +75,7 @@ void TestBase::large_file()
 
   std::vector<std::string> matched_tags = tagger.execute( words.c_str(), 10 ); 
   
-  printf( "%ld tags\n", matched_tags.size() );
+  printf( "%ld tags\n", (long int)matched_tags.size() );
   for( size_t i = 0; i < matched_tags.size(); ++i ){
     printf( "tagged: %s\n", matched_tags[i].c_str() ); 
   }
@@ -85,13 +85,23 @@ void TestBase::large_file()
   assert( matched_tags[1] == "dermatitis" );
 }
 
-int main()
+static void test_run()
 {
   TestBase test;
 
-  test.overflow();
-  test.small();
-  test.large_file();
+  for( int i = 0; i < 10; ++i ) {
+    test.overflow();
+    test.small();
+    test.large_file();
+  }
 
+}
+
+int main()
+{
+  // running multiple iterations to test for memory leaks
+  for( int i = 0; i < 2; ++i ) {
+    test_run();
+  }
   return 0;
 }
