@@ -1,109 +1,75 @@
-bigbox~/project/rb-brill-tagger> valgrind --leak-check=full ruby test/tagger_test.rb 
-==26832== Memcheck, a memory error detector.
-==26832== Copyright (C) 2002-2007, and GNU GPL'd, by Julian Seward et al.
-==26832== Using LibVEX rev 1804, a library for dynamic binary translation.
-==26832== Copyright (C) 2004-2007, and GNU GPL'd, by OpenWorks LLP.
-==26832== Using valgrind-3.3.0, a dynamic binary instrumentation framework.
-==26832== Copyright (C) 2000-2007, and GNU GPL'd, by Julian Seward et al.
-==26832== For more details, rerun with: -v
-==26832== 
-loading tagger...
-tagger loaded!
-Loaded suite test/tagger_test
-Started
-time: 71.056259 sec 0.140733555927846 docs/sec
-.[["", ")"], ["", ")"], ["Take", "VB"], ["an", "DT"], ["active", "JJ"], ["role", "NN"], ["in", "IN"], ["your", "PRP$"], ["care", "NN"], ["When", "WRB"], ["it", "PRP"], ["comes", "VBZ"], ["to", "TO"], ["making", "VBG"], ["decisions", "NNS"], ["about", "IN"], ["the", "DT"], ["goals", "NNS"], ["and", "CC"], ["direction", "NN"], ["of", "IN"], ["treatment", "NN"], [",", ","], ["", ")"], ["do", "VBP"], ["", ")"], ["n't", "RB"], ["sit", "VB"], ["back.", "CD"], ["Work", "NN"], ["closely", "RB"], ["and", "CC"], ["actively", "RB"], ["with", "IN"], ["your", "PRP$"], ["oncologist", "NN"], ["and", "CC"], ["the", "DT"], ["rest", "NN"], ["of", "IN"], ["your", "PRP$"], ["medical", "JJ"], ["team.", "NNP"], ["Dont", "NNP"], ["overlook", "VB"], ["clinical", "JJ"], ["trials", "NNS"], ["If", "IN"], ["youre", "NN"], ["eligible", "JJ"], ["to", "TO"], ["enroll", "VB"], ["in", "IN"], ["clinical", "JJ"], ["trials", "NNS"], [",", ","], ["", ")"], ["select", "VB"], ["an", "DT"], ["oncologist", "NN"], ["who", "WP"], ["participates", "VBZ"], ["in", "IN"], ["them.", "JJ"], ["Patients", "NNS"], ["who", "WP"], ["enroll", "VBP"], ["in", "IN"], ["clinical", "JJ"], ["studies", "NNS"], ["receive", "VBP"], ["closer", "JJR"], ["follow-up", "NN"], [",", ","], ["", ")"], ["the", "DT"], ["highest", "JJS"], ["standard-of-care", "JJ"], ["treatment", "NN"], ["and", "CC"], ["access", "NN"], ["to", "TO"], ["experimental", "JJ"], ["therapies", "NNS"], ["at", "IN"], ["no", "DT"], ["extra", "JJ"], ["cost.", "NNP"], ["Maximize", "NNP"], ["your", "PRP$"], ["nutrition", "NN"], ["strategy", "NN"], ["Doing", "NNP"], ["your", "PRP$"], ["best", "JJS"], ["to", "TO"], ["eat", "VB"], ["a", "DT"], ["healthy", "JJ"], [",", ","], ["", ")"], ["well-balanced", "JJ"], ["diet", "NN"], ["is", "VBZ"], ["vital", "JJ"], ["to", "TO"], ["prompt", "VB"], ["healing", "NN"], ["after", "IN"], ["surgery", "NN"], ["and", "CC"], ["for", "IN"], ["recovery", "NN"], ["from", "IN"], ["radiation", "NN"], ["or", "CC"], ["chemotherapy.", "JJ"], ["Many", "JJ"], ["oncology", "NN"], ["practices", "NNS"], ["employ", "VBP"], ["registered", "VBN"], ["dieticians", "NNS"], ["who", "WP"], ["can", "MD"], ["help", "VB"], ["you", "PRP"], ["optimize", "VB"], ["your", "PRP$"], ["nutrition.", "JJ"], ["Steer", "VB"], ["clear", "JJ"], ["of", "IN"], ["", ")"], ["``", "``"], ["natural", "JJ"], ["cures", "NNS"], ["''", "''"], ["", ")"], ["Before", "IN"], ["trying", "VBG"], ["nutritional", "JJ"], ["supplements", "NNS"], ["or", "CC"], ["herbal", "JJ"], ["remedies", "NNS"], [",", ","], ["", ")"], ["be", "VB"], ["sure", "JJ"], ["to", "TO"], ["discuss", "VB"], ["your", "PRP$"], ["plans", "NNS"], ["with", "IN"], ["a", "DT"], ["doctor.", "JJ"], ["Most", "JJS"], ["have", "VBP"], ["not", "RB"], ["been", "VBN"], ["tested", "VBN"], ["in", "IN"], ["clinical", "JJ"], ["studies", "NNS"], [",", ","], ["", ")"], ["and", "CC"], ["some", "DT"], ["may", "MD"], ["actually", "RB"], ["interfere", "VB"], ["with", "IN"], ["your", "PRP$"], ["treatment.", "JJ"], ["Build", "VB"], ["a", "DT"], ["stronger", "JJR"], ["body", "NN"], ["Even", "RB"], ["walking", "VBG"], ["regularly", "RB"], ["is", "VBZ"], ["can", "MD"], ["help", "VB"], ["you", "PRP"], ["minimize", "VB"], ["long-term", "JJ"], ["muscle", "NN"], ["weakness", "NN"], ["caused", "VBN"], ["by", "IN"], ["illness", "NN"], ["or", "CC"], ["de-conditioning.", "NNP"], ["Focus", "NNP"], ["on", "IN"], ["overall", "JJ"], ["health", "NN"], ["Patients", "NNS"], ["may", "MD"], ["be", "VB"], ["cured", "VBN"], ["of", "IN"], ["cancer", "NN"], ["but", "CC"], ["still", "JJ"], ["face", "NN"], ["life-threatening", "JJ"], ["medical", "JJ"], ["problems", "NNS"], ["that", "WDT"], ["are", "VBP"], ["underemphasized", "JJ"], ["during", "IN"], ["cancer", "NN"], ["treatments", "NNS"], [",", ","], ["", ")"], ["such", "JJ"], ["as", "IN"], ["diabetes", "NN"], [",", ","], ["", ")"], ["high", "JJ"], ["blood", "NN"], ["pressure", "NN"], ["and", "CC"], ["heart", "NN"], ["disease.", "JJ"], ["Continue", "VB"], ["to", "TO"], ["monitor", "VB"], ["your", "PRP$"], ["overall", "JJ"], ["health.", "JJ"], ["Put", "NN"], ["the", "DT"], ["fire", "NN"], ["out", "IN"], ["for", "IN"], ["good", "JJ"], ["Smoking", "NNP"], ["impairs", "NNS"], ["healing", "NN"], ["after", "IN"], ["surgery", "NN"], ["and", "CC"], ["radiation", "NN"], ["and", "CC"], ["increases", "NNS"], ["your", "PRP$"], ["risk", "NN"], ["of", "IN"], ["cardiovascular", "JJ"], ["disease", "NN"], ["and", "CC"], ["many", "JJ"], ["types", "NNS"], ["of", "IN"], ["cancers.", "CD"], ["Ask", "VB"], ["your", "PRP$"], ["doctor", "NN"], ["for", "IN"], ["help", "NN"], ["identifying", "VBG"], ["and", "CC"], ["obtaining", "VBG"], ["the", "DT"], ["most", "RBS"], ["appropriate", "JJ"], ["cessation", "NN"], ["aids.", "NNP"], ["Map", "NNP"], ["a", "DT"], ["healthy", "JJ"], ["future", "NN"], ["Once", "RB"], ["youve", "VBP"], ["completed", "VBN"], ["treatment", "NN"], [",", ","], ["", ")"], ["discuss", "VB"], ["appropriate", "JJ"], ["follow-up", "NN"], ["plans", "NNS"], ["with", "IN"], ["your", "PRP$"], ["doctor", "NN"], ["and", "CC"], ["keep", "VB"], ["track", "NN"], ["of", "IN"], ["them", "PRP"], ["yourself.", "CD"], ["Intensified", "JJ"], ["screening", "NN"], ["over", "IN"], ["many", "JJ"], ["years", "NNS"], ["is", "VBZ"], ["frequently", "RB"], ["recommended", "VBN"], ["to", "TO"], ["identify", "VB"], ["and", "CC"], ["treat", "VB"], ["a", "DT"], ["recurrence", "NN"], ["early", "JJ"], ["on.", "CD"], ["Share", "VB"], ["your", "PRP$"], ["feelings", "NNS"], ["Allow", "VB"], ["yourself", "PRP"], ["time", "NN"], ["to", "TO"], ["discuss", "VB"], ["the", "DT"], ["emotional", "JJ"], ["consequences", "NNS"], ["of", "IN"], ["your", "PRP$"], ["illness", "NN"], ["and", "CC"], ["treatment", "NN"], ["with", "IN"], ["family", "NN"], [",", ","], ["", ")"], ["friends", "NNS"], [",", ","], ["", ")"], ["your", "PRP$"], ["doctor", "NN"], ["and", "CC"], [",", ","], ["", ")"], ["if", "IN"], ["necessary", "JJ"], [",", ","], ["", ")"], ["a", "DT"], ["professional", "JJ"], ["therapist.", "JJ"], ["Many", "JJ"], ["patients", "NNS"], ["also", "RB"], ["find", "VBP"], ["antidepressants", "NNS"], ["helpful", "JJ"], ["during", "IN"], ["treatment.", "JJ"], ["Stay", "VB"], ["connected", "VBN"], ["Although", "IN"], ["many", "JJ"], ["newly", "RB"], ["diagnosed", "VBN"], ["patients", "NNS"], ["fear", "VBP"], ["they", "PRP"], ["will", "MD"], ["not", "RB"], ["be", "VB"], ["able", "JJ"], ["to", "TO"], ["keep", "VB"], ["working", "VBG"], ["during", "IN"], ["treatment", "NN"], [",", ","], ["", ")"], ["this", "DT"], ["is", "VBZ"], ["usually", "RB"], ["not", "RB"], ["the", "DT"], ["case.", "CD"], ["Working", "NNP"], [",", ","], ["", ")"], ["even", "RB"], ["at", "IN"], ["a", "DT"], ["reduced", "VBN"], ["schedule", "NN"], [",", ","], ["", ")"], ["helps", "VBZ"], ["you", "PRP"], ["maintain", "VBP"], ["valuable", "JJ"], ["social", "JJ"], ["connections", "NNS"], ["and", "CC"], ["weekly", "JJ"], ["structure", "NN"], [".", "."]]
-.
-Finished in 73.717936 seconds.
-
-2 tests, 0 assertions, 0 failures, 0 errors
-==26832== 
-==26832== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 19 from 1)
-==26832== malloc/free: in use at exit: 5,739,570 bytes in 16,219 blocks.
-==26832== malloc/free: 1,895,847 allocs, 1,879,628 frees, 46,046,270 bytes allocated.
-==26832== For counts of detected errors, rerun with: -v
-==26832== searching for pointers to 16,219 not-freed blocks.
-==26832== checked 5,941,676 bytes.
-==26832== 
-==26832== 16 bytes in 1 blocks are definitely lost in loss record 1 of 17
-==26832==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==26832==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
-==26832==    by 0x80A2431: local_append (parse.y:5640)
-==26832==    by 0x80A2555: local_cnt (parse.y:5667)
-==26832==    by 0x80A386A: special_local_set (parse.y:6228)
-==26832==    by 0x80A38F2: rb_backref_set (parse.y:6252)
-==26832==    by 0x80AB3B9: rb_reg_search (re.c:946)
-==26832==    by 0x80CD725: rb_str_split_m (string.c:3559)
-==26832==    by 0x805FB9F: call_cfunc (eval.c:5700)
-==26832==    by 0x805F109: rb_call0 (eval.c:5856)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832==    by 0x805948A: rb_eval (eval.c:3479)
-==26832== 
-==26832== 
-==26832== 24 bytes in 1 blocks are possibly lost in loss record 2 of 17
-==26832==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==26832==    by 0x400D260: perl_split (lex.c:42)
-==26832==    by 0x400ADCA: parse_contextual_rule (rules.c:85)
-==26832==    by 0x400CFF8: tagger_context_add_contextual_rule (tagger.c:87)
-==26832==    by 0x400D882: BrillTagger_add_contextual_rule (rbtagger.c:42)
-==26832==    by 0x805FBD4: call_cfunc (eval.c:5706)
-==26832==    by 0x805F109: rb_call0 (eval.c:5856)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832==    by 0x805948A: rb_eval (eval.c:3479)
-==26832==    by 0x8057D9A: rb_eval (eval.c:3133)
-==26832==    by 0x805F82F: rb_call0 (eval.c:6007)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832== 
-==26832== 
-==26832== 692 bytes in 22 blocks are possibly lost in loss record 11 of 17
-==26832==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==26832==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
-==26832==    by 0x806484F: scope_dup (eval.c:8211)
-==26832==    by 0x80651D8: proc_alloc (eval.c:8484)
-==26832==    by 0x806522C: proc_s_new (eval.c:8519)
-==26832==    by 0x805FB9F: call_cfunc (eval.c:5700)
-==26832==    by 0x805F109: rb_call0 (eval.c:5856)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832==    by 0x805948A: rb_eval (eval.c:3479)
-==26832==    by 0x805A5CA: rb_eval (eval.c:3664)
-==26832==    by 0x805F72F: rb_call0 (eval.c:5980)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832== 
-==26832== 
-==26832== 12,566 bytes in 1,637 blocks are definitely lost in loss record 13 of 17
-==26832==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==26832==    by 0xB2DE9F: strdup (in /lib/libc-2.7.so)
-==26832==    by 0x400C3B8: apply_lexical_rule (rules.c:413)
-==26832==    by 0x400DC1D: BrillTagger_apply_lexical_rules (rbtagger.c:122)
-==26832==    by 0x805FC79: call_cfunc (eval.c:5715)
-==26832==    by 0x805F109: rb_call0 (eval.c:5856)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832==    by 0x805948A: rb_eval (eval.c:3479)
-==26832==    by 0x805F82F: rb_call0 (eval.c:6007)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832==    by 0x805948A: rb_eval (eval.c:3479)
-==26832==    by 0x805D2C4: rb_yield_0 (eval.c:5027)
-==26832== 
-==26832== 
-==26832== 21,106 (11,664 direct, 9,442 indirect) bytes in 432 blocks are definitely lost in loss record 14 of 17
-==26832==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==26832==    by 0x400D2A8: perl_split (lex.c:45)
-==26832==    by 0x400ADCA: parse_contextual_rule (rules.c:85)
-==26832==    by 0x400CFF8: tagger_context_add_contextual_rule (tagger.c:87)
-==26832==    by 0x400D882: BrillTagger_add_contextual_rule (rbtagger.c:42)
-==26832==    by 0x805FBD4: call_cfunc (eval.c:5706)
-==26832==    by 0x805F109: rb_call0 (eval.c:5856)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832==    by 0x805948A: rb_eval (eval.c:3479)
-==26832==    by 0x8057D9A: rb_eval (eval.c:3133)
-==26832==    by 0x805F82F: rb_call0 (eval.c:6007)
-==26832==    by 0x80606BB: rb_call (eval.c:6103)
-==26832== 
-==26832== LEAK SUMMARY:
-==26832==    definitely lost: 24,246 bytes in 2,070 blocks.
-==26832==    indirectly lost: 9,442 bytes in 431 blocks.
-==26832==      possibly lost: 716 bytes in 23 blocks.
-==26832==    still reachable: 5,705,166 bytes in 13,695 blocks.
-==26832==         suppressed: 0 bytes in 0 blocks.
-==26832== Reachable blocks (those to which a pointer was found) are not shown.
-==26832== To see them, rerun with: --leak-check=full --show-reachable=yes
+==26989== 
+==26989== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 19 from 1)
+==26989== malloc/free: in use at exit: 5,713,384 bytes in 14,023 blocks.
+==26989== malloc/free: 1,895,847 allocs, 1,881,824 frees, 46,046,270 bytes allocated.
+==26989== For counts of detected errors, rerun with: -v
+==26989== searching for pointers to 14,023 not-freed blocks.
+==26989== checked 5,941,652 bytes.
+==26989== 
+==26989== 16 bytes in 1 blocks are definitely lost in loss record 1 of 16
+==26989==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==26989==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
+==26989==    by 0x80A2431: local_append (parse.y:5640)
+==26989==    by 0x80A2555: local_cnt (parse.y:5667)
+==26989==    by 0x80A386A: special_local_set (parse.y:6228)
+==26989==    by 0x80A38F2: rb_backref_set (parse.y:6252)
+==26989==    by 0x80AB3B9: rb_reg_search (re.c:946)
+==26989==    by 0x80CD725: rb_str_split_m (string.c:3559)
+==26989==    by 0x805FB9F: call_cfunc (eval.c:5700)
+==26989==    by 0x805F109: rb_call0 (eval.c:5856)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989==    by 0x805948A: rb_eval (eval.c:3479)
+==26989== 
+==26989== 
+==26989== 26 bytes in 9 blocks are definitely lost in loss record 2 of 16
+==26989==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==26989==    by 0xB2DE9F: strdup (in /lib/libc-2.7.so)
+==26989==    by 0x400CF8E: tagger_context_add_to_lexicon (tagger.c:71)
+==26989==    by 0x400D86E: BrillTagger_add_to_lexicon (rbtagger.c:26)
+==26989==    by 0x805FBFF: call_cfunc (eval.c:5709)
+==26989==    by 0x805F109: rb_call0 (eval.c:5856)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989==    by 0x805948A: rb_eval (eval.c:3479)
+==26989==    by 0x8057D9A: rb_eval (eval.c:3133)
+==26989==    by 0x805F82F: rb_call0 (eval.c:6007)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989==    by 0x805948A: rb_eval (eval.c:3479)
+==26989== 
+==26989== 
+==26989== 692 bytes in 22 blocks are possibly lost in loss record 11 of 16
+==26989==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==26989==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
+==26989==    by 0x806484F: scope_dup (eval.c:8211)
+==26989==    by 0x80651D8: proc_alloc (eval.c:8484)
+==26989==    by 0x806522C: proc_s_new (eval.c:8519)
+==26989==    by 0x805FB9F: call_cfunc (eval.c:5700)
+==26989==    by 0x805F109: rb_call0 (eval.c:5856)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989==    by 0x805948A: rb_eval (eval.c:3479)
+==26989==    by 0x805A5CA: rb_eval (eval.c:3664)
+==26989==    by 0x805F72F: rb_call0 (eval.c:5980)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989== 
+==26989== 
+==26989== 7,484 (4,348 direct, 3,136 indirect) bytes in 148 blocks are definitely lost in loss record 13 of 16
+==26989==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==26989==    by 0x400D330: perl_split (lex.c:52)
+==26989==    by 0x400AC57: parse_lexical_rule (rules.c:43)
+==26989==    by 0x400D015: tagger_context_add_lexical_rule (tagger.c:81)
+==26989==    by 0x400D958: BrillTagger_add_lexical_rule (rbtagger.c:50)
+==26989==    by 0x805FBD4: call_cfunc (eval.c:5706)
+==26989==    by 0x805F109: rb_call0 (eval.c:5856)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989==    by 0x805948A: rb_eval (eval.c:3479)
+==26989==    by 0x8057D9A: rb_eval (eval.c:3133)
+==26989==    by 0x805F82F: rb_call0 (eval.c:6007)
+==26989==    by 0x80606BB: rb_call (eval.c:6103)
+==26989== 
+==26989== LEAK SUMMARY:
+==26989==    definitely lost: 4,390 bytes in 158 blocks.
+==26989==    indirectly lost: 3,136 bytes in 148 blocks.
+==26989==      possibly lost: 692 bytes in 22 blocks.
+==26989==    still reachable: 5,705,166 bytes in 13,695 blocks.
+==26989==         suppressed: 0 bytes in 0 blocks.
+==26989== Reachable blocks (those to which a pointer was found) are not shown.
+==26989== To see them, rerun with: --leak-check=full --show-reachable=yes
