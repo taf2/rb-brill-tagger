@@ -106,6 +106,8 @@ trans_rule *parse_contextual_rule (const char *rule_text) {
   else
     rule->arg2 = NULL;
 
+  perl_split_free( split_ptr );
+
   return rule;
 }
 
@@ -517,4 +519,5 @@ void apply_lexical_rule(const trans_rule *r,
 	change_the_tag_darray(tag_array_val,count2,r->new);}
     }
   }
+  free( name );
 }

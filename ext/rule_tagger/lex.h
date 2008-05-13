@@ -17,6 +17,7 @@ extern char **perl_split(const char *);
 		 Last ptr is a null. */
      /* x = perl_split(buf);  then you are responsible for freeing
 	*x and x */
+extern void perl_split_free( char **split_buf );
 
 extern char **perl_split_independent(const char *);
          /* same as perl_split, but each element in the array is a separate */

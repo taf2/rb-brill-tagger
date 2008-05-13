@@ -23,13 +23,19 @@ char *append_with_char(w1,w2,w3)
      char *w1,*w2,w3;
 {
   char *result;
-  
-  result = 
-    (char *)malloc((strlen(w1) + strlen(w2)+2) * sizeof(char)); 
+  result = (char *)malloc((strlen(w1) + strlen(w2)+2) * sizeof(char)); 
   sprintf(result,"%s%c%s",w1,w3,w2);
   return(result);
 }
   
+void perl_split_free( char **split_buf )
+{
+  int i;
+  for( i = 0; split_buf[i] != NULL; ++i ) { 
+    free( split_buf[i] );
+  }
+  free( split_buf );
+}
 
 
 char **perl_split(buf)
@@ -43,13 +49,15 @@ char **perl_split(buf)
   while(*buf == ' ' || *buf == '\t') ++buf;
   strcpy(temp2,buf);
   return_buf = (char **) malloc(sizeof(char *) * ((numspaces(temp2)+1) + 2));
-  return_buf[cntr++] = (char *)strtok(temp2," \t");
+  return_buf[cntr++] = strdup( (char *)strtok(temp2," \t") );
   while ( (temp = (char *)strtok(NULL," \t")) ) 
 	if (temp != NULL) {
-		return_buf[cntr] = temp;
+		return_buf[cntr] = strdup(temp);
 		++cntr;}
   return_buf[cntr] = NULL;
-  return(return_buf); }
+  free(temp2);
+  return(return_buf);
+}
 
 
 

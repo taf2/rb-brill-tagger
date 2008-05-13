@@ -68,7 +68,9 @@ void tagger_context_free( TaggerContext *tc )
 
 int tagger_context_add_to_lexicon( TaggerContext *tc, const char *word, const char *tag )
 {
-  return Registry_add(tc->lexicon_hash, (VOIDP)strdup(word), (VOIDP)strdup(tag));
+  VOIDP wp = (VOIDP)strdup(word);
+  VOIDP tp = (VOIDP)strdup(tag); // XXX: separate lines for valgrind memory leak reporting
+  return Registry_add(tc->lexicon_hash, wp, tp);
 }
 
 int tagger_context_add_to_lexicon_tags( TaggerContext *tc, const char *bigram )
