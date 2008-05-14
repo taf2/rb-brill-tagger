@@ -70,10 +70,10 @@ VALUE Tagger_alloc(VALUE klass)
   return object;
 }
 
-extern "C" void Init_rtagger()
+extern "C" void Init_word_tagger()
 {
   rb_Tagger = rb_define_module( "Tagger" );
-  rb_NWordTagger = rb_define_class_under( rb_Tagger, "NWordTagger", rb_cObject );
+  rb_NWordTagger = rb_define_class_under( rb_Tagger, "WordTagger", rb_cObject );
 
   rb_define_alloc_func( rb_NWordTagger, Tagger_alloc );
 

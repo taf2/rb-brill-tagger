@@ -4,8 +4,8 @@ class TestWordTagger < Test::Unit::TestCase
   
   def setup
     if !defined?($tagger)
-      $tagger = Word::Tagger.new #( :ngrams => 4, :stemming => true, :tagbank => 'tags.txt' )
-      $tagger.load_tags( File.read(File.join(File.dirname(__FILE__),'fixtures','tags.txt') ) )
+      $tagger = Word::Tagger.new
+      $tagger.load_tags( File.read(File.join(File.dirname(__FILE__),'fixtures','tags.txt') ).split("\n").map{|t| t.strip} )
       $tagger.set_words( 4 )
     end
   end
