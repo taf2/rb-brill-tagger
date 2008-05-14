@@ -77,6 +77,8 @@ trans_rule *parse_lexical_rule (const char *rule_text) {
 
   rule->new = strdup(split_ptr[2 + offset]);
 
+  perl_split_free( split_ptr );
+
   return rule;
 }
 
