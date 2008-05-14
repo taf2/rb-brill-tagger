@@ -27,3 +27,7 @@ ext/word_tagger/test/testit
 ext/word_tagger/mkmf.log
 ext/word_tagger/rtagger.so
 ext/word_tagger/Makefile
+ext/word_tagger/word_tagger.so
+lib/word_tagger.so
+ext/word_tagger/word_tagger.bundle
+lib/word_tagger.bundle
