@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 GEM_NAME = 'rbtagger' # what ppl will type to install your gem
-RUBYFORGE_PROJECT = 'ruletagger'
+RUBYFORGE_PROJECT = 'rbtagger'
 
 require 'rubygems'
 begin

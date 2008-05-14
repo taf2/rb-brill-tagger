@@ -3,8 +3,8 @@ require 'rbtagger/version'
 AUTHOR = 'Todd A. Fisher'  # can also be an array of Authors
 EMAIL = 'todd.fisher@gmail.com'
 DESCRIPTION = "A Simple Ruby Rule-Based Part of Speech Tagger"
-GEM_NAME = 'ruletagger' # what ppl will type to install your gem
-RUBYFORGE_PROJECT = 'ruletagger' # The unix name for your project
+GEM_NAME = 'rbtagger' # what ppl will type to install your gem
+RUBYFORGE_PROJECT = 'rbtagger' # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
 DOWNLOAD_PATH = "http://rubyforge.org/projects/#{RUBYFORGE_PROJECT}"
 EXTRA_DEPENDENCIES = [
