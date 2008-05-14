@@ -1,75 +1,60 @@
-==27028== 
-==27028== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 19 from 1)
-==27028== malloc/free: in use at exit: 5,713,384 bytes in 14,666 blocks.
-==27028== malloc/free: 1,897,899 allocs, 1,883,233 frees, 46,055,736 bytes allocated.
-==27028== For counts of detected errors, rerun with: -v
-==27028== searching for pointers to 14,666 not-freed blocks.
-==27028== checked 5,941,652 bytes.
-==27028== 
-==27028== 16 bytes in 1 blocks are definitely lost in loss record 1 of 16
-==27028==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==27028==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
-==27028==    by 0x80A2431: local_append (parse.y:5640)
-==27028==    by 0x80A2555: local_cnt (parse.y:5667)
-==27028==    by 0x80A386A: special_local_set (parse.y:6228)
-==27028==    by 0x80A38F2: rb_backref_set (parse.y:6252)
-==27028==    by 0x80AB3B9: rb_reg_search (re.c:946)
-==27028==    by 0x80CD725: rb_str_split_m (string.c:3559)
-==27028==    by 0x805FB9F: call_cfunc (eval.c:5700)
-==27028==    by 0x805F109: rb_call0 (eval.c:5856)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028==    by 0x805948A: rb_eval (eval.c:3479)
-==27028== 
-==27028== 
-==27028== 26 bytes in 9 blocks are definitely lost in loss record 2 of 16
-==27028==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==27028==    by 0xB2DE9F: strdup (in /lib/libc-2.7.so)
-==27028==    by 0x400CF8D: tagger_context_add_to_lexicon (tagger.c:71)
-==27028==    by 0x400D8B2: BrillTagger_add_to_lexicon (rbtagger.c:26)
-==27028==    by 0x805FBFF: call_cfunc (eval.c:5709)
-==27028==    by 0x805F109: rb_call0 (eval.c:5856)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028==    by 0x805948A: rb_eval (eval.c:3479)
-==27028==    by 0x8057D9A: rb_eval (eval.c:3133)
-==27028==    by 0x805F82F: rb_call0 (eval.c:6007)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028==    by 0x805948A: rb_eval (eval.c:3479)
-==27028== 
-==27028== 
-==27028== 692 bytes in 22 blocks are possibly lost in loss record 11 of 16
-==27028==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==27028==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
-==27028==    by 0x806484F: scope_dup (eval.c:8211)
-==27028==    by 0x80651D8: proc_alloc (eval.c:8484)
-==27028==    by 0x806522C: proc_s_new (eval.c:8519)
-==27028==    by 0x805FB9F: call_cfunc (eval.c:5700)
-==27028==    by 0x805F109: rb_call0 (eval.c:5856)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028==    by 0x805948A: rb_eval (eval.c:3479)
-==27028==    by 0x805A5CA: rb_eval (eval.c:3664)
-==27028==    by 0x805F72F: rb_call0 (eval.c:5980)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028== 
-==27028== 
-==27028== 7,484 (4,348 direct, 3,136 indirect) bytes in 148 blocks are definitely lost in loss record 13 of 16
-==27028==    at 0x4005868: malloc (vg_replace_malloc.c:207)
-==27028==    by 0x400D35A: perl_split (lex.c:51)
-==27028==    by 0x400AC57: parse_lexical_rule (rules.c:43)
-==27028==    by 0x400D01B: tagger_context_add_lexical_rule (tagger.c:83)
-==27028==    by 0x400D99C: BrillTagger_add_lexical_rule (rbtagger.c:50)
-==27028==    by 0x805FBD4: call_cfunc (eval.c:5706)
-==27028==    by 0x805F109: rb_call0 (eval.c:5856)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028==    by 0x805948A: rb_eval (eval.c:3479)
-==27028==    by 0x8057D9A: rb_eval (eval.c:3133)
-==27028==    by 0x805F82F: rb_call0 (eval.c:6007)
-==27028==    by 0x80606BB: rb_call (eval.c:6103)
-==27028== 
-==27028== LEAK SUMMARY:
-==27028==    definitely lost: 4,390 bytes in 158 blocks.
-==27028==    indirectly lost: 3,136 bytes in 791 blocks.
-==27028==      possibly lost: 692 bytes in 22 blocks.
-==27028==    still reachable: 5,705,166 bytes in 13,695 blocks.
-==27028==         suppressed: 0 bytes in 0 blocks.
-==27028== Reachable blocks (those to which a pointer was found) are not shown.
-==27028== To see them, rerun with: --leak-check=full --show-reachable=yes
+==29171== 
+==29171== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 19 from 1)
+==29171== malloc/free: in use at exit: 3,284,995 bytes in 22,026 blocks.
+==29171== malloc/free: 1,897,908 allocs, 1,875,882 frees, 45,905,687 bytes allocated.
+==29171== For counts of detected errors, rerun with: -v
+==29171== searching for pointers to 22,026 not-freed blocks.
+==29171== checked 3,458,688 bytes.
+==29171== 
+==29171== 16 bytes in 1 blocks are definitely lost in loss record 1 of 14
+==29171==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==29171==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
+==29171==    by 0x80A2431: local_append (parse.y:5640)
+==29171==    by 0x80A2555: local_cnt (parse.y:5667)
+==29171==    by 0x80A386A: special_local_set (parse.y:6228)
+==29171==    by 0x80A38F2: rb_backref_set (parse.y:6252)
+==29171==    by 0x80AB3B9: rb_reg_search (re.c:946)
+==29171==    by 0x80CD725: rb_str_split_m (string.c:3559)
+==29171==    by 0x805FB9F: call_cfunc (eval.c:5700)
+==29171==    by 0x805F109: rb_call0 (eval.c:5856)
+==29171==    by 0x80606BB: rb_call (eval.c:6103)
+==29171==    by 0x805948A: rb_eval (eval.c:3479)
+==29171== 
+==29171== 
+==29171== 26 bytes in 9 blocks are definitely lost in loss record 2 of 14
+==29171==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==29171==    by 0xB2DE9F: strdup (in /lib/libc-2.7.so)
+==29171==    by 0x400D11B: tagger_context_add_goodright (tagger.c:105)
+==29171==    by 0x400DA92: BrillTagger_add_goodright (rbtagger.c:76)
+==29171==    by 0x805FBD4: call_cfunc (eval.c:5706)
+==29171==    by 0x805F109: rb_call0 (eval.c:5856)
+==29171==    by 0x80606BB: rb_call (eval.c:6103)
+==29171==    by 0x805948A: rb_eval (eval.c:3479)
+==29171==    by 0x8057D9A: rb_eval (eval.c:3133)
+==29171==    by 0x805F82F: rb_call0 (eval.c:6007)
+==29171==    by 0x80606BB: rb_call (eval.c:6103)
+==29171==    by 0x805948A: rb_eval (eval.c:3479)
+==29171== 
+==29171== 
+==29171== 1,044 bytes in 33 blocks are possibly lost in loss record 11 of 14
+==29171==    at 0x4005868: malloc (vg_replace_malloc.c:207)
+==29171==    by 0x8072AF6: ruby_xmalloc (gc.c:139)
+==29171==    by 0x806484F: scope_dup (eval.c:8211)
+==29171==    by 0x80651D8: proc_alloc (eval.c:8484)
+==29171==    by 0x806522C: proc_s_new (eval.c:8519)
+==29171==    by 0x805FB9F: call_cfunc (eval.c:5700)
+==29171==    by 0x805F109: rb_call0 (eval.c:5856)
+==29171==    by 0x80606BB: rb_call (eval.c:6103)
+==29171==    by 0x805948A: rb_eval (eval.c:3479)
+==29171==    by 0x805A5CA: rb_eval (eval.c:3664)
+==29171==    by 0x805F72F: rb_call0 (eval.c:5980)
+==29171==    by 0x80606BB: rb_call (eval.c:6103)
+==29171== 
+==29171== LEAK SUMMARY:
+==29171==    definitely lost: 42 bytes in 10 blocks.
+==29171==      possibly lost: 1,044 bytes in 33 blocks.
+==29171==    still reachable: 3,283,909 bytes in 21,983 blocks.
+==29171==         suppressed: 0 bytes in 0 blocks.
+==29171== Reachable blocks (those to which a pointer was found) are not shown.
+==29171== To see them, rerun with: --leak-check=full --show-reachable=yes
+
