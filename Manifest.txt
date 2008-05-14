@@ -18,6 +18,7 @@ ext/rule_tagger/lex.c
 ext/rule_tagger/lex.h
 ext/rule_tagger/memory.c
 ext/rule_tagger/memory.h
+ext/rule_tagger/mkmf.log
 ext/rule_tagger/rbtagger.c
 ext/rule_tagger/registry.c
 ext/rule_tagger/registry.h
@@ -31,12 +32,12 @@ ext/rule_tagger/tagger.h
 ext/rule_tagger/useful.c
 ext/rule_tagger/useful.h
 ext/word_tagger/extconf.rb
+ext/word_tagger/mkmf.log
 ext/word_tagger/porter_stemmer.c
 ext/word_tagger/porter_stemmer.h
 ext/word_tagger/rtagger.cc
 ext/word_tagger/tagger.cc
 ext/word_tagger/tagger.h
-ext/word_tagger/tagger.rb
 ext/word_tagger/test.rb
 ext/word_tagger/test/Makefile
 ext/word_tagger/test/doc.txt
@@ -44,6 +45,7 @@ ext/word_tagger/test/test.cc
 lib/brill/tagger.rb
 lib/rbtagger.rb
 lib/rbtagger/version.rb
+lib/word/tagger.rb
 script/console
 script/destroy
 script/generate
@@ -51,6 +53,9 @@ script/txt2html
 setup.rb
 tasks/deployment.rake
 tasks/environment.rake
+tasks/extconf.rake
+tasks/extconf/rule_tagger.rake
+tasks/extconf/word_tagger.rake
 tasks/website.rake
 test/CONTEXTUALRULEFILE
 test/LEXICALRULEFILE
@@ -65,8 +70,10 @@ test/docs/doc6.txt
 test/docs/doc7.txt
 test/docs/doc8.txt
 test/docs/doc9.txt
-test/tagger_test.rb
+test/fixtures/tags.txt
 test/test_helper.rb
+test/test_rule_tagger.rb
+test/test_word_tagger.rb
 tools/rakehelp.rb
 website/index.html
 website/index.txt
