@@ -31,3 +31,5 @@ ext/word_tagger/word_tagger.so
 lib/word_tagger.so
 ext/word_tagger/word_tagger.bundle
 lib/word_tagger.bundle
+pkg/
+doc/
