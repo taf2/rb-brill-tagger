@@ -25,9 +25,9 @@ class TestWordTagger < Test::Unit::TestCase
   end
 
   def test_cat_and_the_hat
-    tagger = Word::Tagger.new( ['cat','hat'], :words => 4 )
-    tags = tagger.execute( 'the cat and the hat' )
-    assert_equal( ["cat", "hat"], tags )
+    tagger = Word::Tagger.new( ['Cat','hat'], :words => 4 )
+    tags = tagger.execute( 'the cAt and the hat' )
+    assert_equal( ["Cat", "hat"], tags )
   end
 
 end

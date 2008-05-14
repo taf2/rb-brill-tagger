@@ -33,12 +33,21 @@ static std::vector<std::string> word_split(const std::string& s)
   return std::vector<std::string>(std::istream_iterator<std::string>(is), std::istream_iterator<std::string>());
 }
 
+static void word_downcase( std::string &word )
+{
+  for( int j = 0; j < word.size(); ++j ) {
+    word[j] = tolower( word[j] );
+  }
+}
+
 NWordTagger::NWordTagger() 
  : nwords(2), stemmer(porter_stemmer_new()){
 }
 NWordTagger::~NWordTagger(){
   porter_stemmer_free(stemmer);
 }
+
+
 void NWordTagger::loadTags( const std::set<std::string> &tags )
 {
   for( std::set<std::string>::iterator i = tags.begin(); i != tags.end(); ++i ){
@@ -51,14 +60,14 @@ void NWordTagger::loadTags( const std::set<std::string> &tags )
         stemmed += this->stemWord(words[j]) + " ";
       }
       stemmed = stemmed.substr(0,stemmed.length()-1);
-      this->tags[stemmed] = word;
-      //printf( "word: %s -> %s\n", word.c_str(), stemmed.c_str() );
     }
     else{
       stemmed = this->stemWord(*i);
-      //printf( "word: %s -> %s\n", word.c_str(), stemmed.c_str() );
-      this->tags[stemmed] = word;
     }
+    // downcase stemmed
+    word_downcase( stemmed );
+    //printf( "word: %s -> %s\n", word.c_str(), stemmed.c_str() );
+    this->tags[stemmed] = word;
 
   }
 }
@@ -84,6 +93,7 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
 
     // get the stemmed word at position i
     match_word = this->stemWord(words[i]);
+    word_downcase( match_word );
 
     // now scan ahead nwords positions searching our tags table for matches
     for( short j = 1; (j <= this->nwords) && ((i+j) < words.size()); ++j ) {
