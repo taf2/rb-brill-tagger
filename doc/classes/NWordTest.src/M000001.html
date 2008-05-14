@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>setup (NWordTest)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File ext/word_tagger/test.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">defined?</span>(<span class="ruby-identifier">$tagger</span>)
+      <span class="ruby-identifier">$tagger</span> = <span class="ruby-constant">Tagger</span><span class="ruby-operator">::</span><span class="ruby-constant">SimpleTagger</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">$tagger</span>.<span class="ruby-identifier">load_tags</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value str">'../../tags.txt'</span>).<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>) )
+      <span class="ruby-identifier">$tagger</span>.<span class="ruby-identifier">set_words</span>( <span class="ruby-value">4</span> );
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

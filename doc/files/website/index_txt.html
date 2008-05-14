@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: index.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>index.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>website/index.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Wed May 14 09:46:02 -0400 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+h1. rbtagger
+</p>
+<p>
+&lt;h4 style=&quot;float:right;padding-right:10px;&quot;&gt; &amp;x2192;
+&#8216;rb-brill-tagger&#8217;&lt;/h4&gt;
+</p>
+<p>
+h2. What
+</p>
+<p>
+A Simple Ruby Rule-Based Part of Speech <a
+href="../../classes/Tagger.html">Tagger</a>
+</p>
+<p>
+This work is based on the work of Eric <a
+href="../../classes/Brill.html">Brill</a>
+</p>
+<p>
+h2. Installing
+</p>
+<p>
+&lt;pre syntax=&quot;bash&quot;&gt;sudo gem install rbtagger&lt;/pre&gt;
+</p>
+<p>
+h2. The basics
+</p>
+<p>
+&lt;pre syntax=&quot;ruby&quot;&gt; tagger = Brill::Tagger.new(
+File.join(File.dirname(<em>FILE</em>),&quot;LEXICON&quot;),
+</p>
+<pre>
+                            File.join(File.dirname(__FILE__),&quot;LEXICALRULEFILE&quot;),
+                            File.join(File.dirname(__FILE__),&quot;CONTEXTUALRULEFILE&quot;) )
+</pre>
+<p>
+docs.each do|doc|
+</p>
+<pre>
+  tagger.tag( File.read( doc ) )
+</pre>
+<p>
+end &lt;/pre&gt;
+</p>
+<p>
+h2. Forum
+</p>
+<p>
+&quot;<a
+href="http://groups.google.com/group/rb-brill-tagger":http://groups.google.com/group/rb-brill-tagger">groups.google.com/group/rb-brill-tagger":http://groups.google.com/group/rb-brill-tagger</a>
+</p>
+<p>
+h2. How to submit patches
+</p>
+<p>
+Read the &quot;8 steps for fixing other people&#8216;s code&quot;:<a
+href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code">drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code</a>/
+and for section &quot;8b: Submit patch to Google Groups&quot;:<a
+href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups">drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups</a>,
+use the Google Group above.
+</p>
+<ul>
+<li>github: &quot;<a
+href="http://github.com/taf2/rb-brill-tagger/tree/master":http://github.com/taf2/rb-brill-tagger/tree/master">github.com/taf2/rb-brill-tagger/tree/master":http://github.com/taf2/rb-brill-tagger/tree/master</a>
+
+</li>
+</ul>
+<p>
+&lt;pre&gt;git clone git://github.com/taf2/rb-brill-tagger.git&lt;/pre&gt;
+</p>
+<p>
+h3. Build and test instructions
+</p>
+<p>
+&lt;pre&gt;cd rb-brill-tagger rake test rake install_gem&lt;/pre&gt;
+</p>
+<p>
+h2. License
+</p>
+<p>
+This code is free to use under the terms of the MIT license.
+</p>
+<p>
+h2. Contact
+</p>
+<p>
+Comments are welcome. Send an email to &quot;FIXME full name&quot;:<a
+href="mailto:FIXME">FIXME</a> email via the &quot;forum&quot;:<a
+href="http://groups.google.com/group/rb-brill-tagger">groups.google.com/group/rb-brill-tagger</a>
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

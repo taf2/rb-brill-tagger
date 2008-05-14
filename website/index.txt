@@ -1,0 +1,53 @@
+h1. rbtagger
+
+<h4 style="float:right;padding-right:10px;"> &#x2192; 'rb-brill-tagger'</h4>
+
+
+h2. What
+
+A Simple Ruby Rule-Based Part of Speech Tagger
+
+This work is based on the work of Eric Brill
+
+h2. Installing
+
+<pre syntax="bash">sudo gem install rbtagger</pre>
+
+h2. The basics
+
+<pre syntax="ruby">
+tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
+                            File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
+                            File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
+docs.each do|doc|
+  tagger.tag( File.read( doc ) )
+end
+</pre>
+
+h2. Forum
+
+"http://groups.google.com/group/rb-brill-tagger":http://groups.google.com/group/rb-brill-tagger
+
+h2. How to submit patches
+
+Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/ and for section "8b: Submit patch to Google Groups":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups, use the Google Group above.
+
+* github: "http://github.com/taf2/rb-brill-tagger/tree/master":http://github.com/taf2/rb-brill-tagger/tree/master
+
+<pre>git clone git://github.com/taf2/rb-brill-tagger.git</pre>
+
+h3. Build and test instructions
+
+<pre>cd rb-brill-tagger
+rake test
+rake install_gem</pre>
+
+
+h2. License
+
+This code is free to use under the terms of the MIT license. 
+
+h2. Contact
+
+Comments are welcome. Send an email to "FIXME full name":mailto:FIXME email via the "forum":http://groups.google.com/group/rb-brill-tagger
+

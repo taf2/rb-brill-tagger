@@ -1,7 +1,7 @@
 require 'mkmf'
 
-dir_config("tagger")
+dir_config("word_tagger")
 have_library("c", "main")
 have_library("stdc++")
 
-create_makefile("rtagger")
+create_makefile("word_tagger")
