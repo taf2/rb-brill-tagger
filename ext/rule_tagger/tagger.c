@@ -36,7 +36,8 @@ static void free_registry_entry(void *key, void *value, void *other)
 }
 
 /* Destroy a Registry whose keys & values have been allocated */
-static void free_registry(Registry r) {
+static void free_registry(Registry r)
+{
   Registry_traverse(r, free_registry_entry, NULL);
   Registry_destroy(r);
 }
@@ -92,15 +93,18 @@ void tagger_context_add_contextual_rule( TaggerContext *tc, const char *rule )
 
 int tagger_context_add_word_to_wordlist( TaggerContext *tc, const char *word )
 {
-  return Registry_add(tc->wordlist_hash, (VOIDP)strdup(word), (VOIDP)1);
+  VOIDP pw = (VOIDP)strdup(word);
+  return Registry_add(tc->wordlist_hash, pw, (VOIDP)1);
 }
 
 int tagger_context_add_goodleft( TaggerContext *tc, const char *word )
 {
-  return Registry_add(tc->good_left_hash, (VOIDP)strdup(word), (VOIDP)1);
+  VOIDP pw = (VOIDP)strdup(word);
+  return Registry_add(tc->good_left_hash, pw, (VOIDP)1);
 }
 
 int tagger_context_add_goodright( TaggerContext *tc, const char *word )
 {
-  return Registry_add(tc->good_right_hash, (VOIDP)strdup(word), (VOIDP)1);
+  VOIDP pw = (VOIDP)strdup(word);
+  return Registry_add(tc->good_right_hash, pw, (VOIDP)1);
 }
