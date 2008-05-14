@@ -23,4 +23,11 @@ class TestWordTagger < Test::Unit::TestCase
     assert_equal ['ventricular septal defect'], tags
     puts "Duration: #{Time.now - timer} sec"
   end
+
+  def test_cat_and_the_hat
+    tagger = Word::Tagger.new( ['cat','hat'], :words => 4 )
+    tags = tagger.execute( 'the cat and the hat' )
+    assert_equal( ["cat", "hat"], tags )
+  end
+
 end

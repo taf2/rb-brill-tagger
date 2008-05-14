@@ -1,8 +1,12 @@
 module Word
   require 'word_tagger'
   class Tagger < Tagger::WordTagger
-    def initialize( tags_file, options = {} )
-      load_tags( RbTagger.tags_from_file( tags_file ) )
+    def initialize( tags, options = {} )
+      if tags.is_a?(String) and File.exist?(tags)
+        load_tags( RbTagger.tags_from_file( tags ) )
+      else
+        load_tags( tags )
+      end
       set_words( options[:words] || 2 )
     end
 

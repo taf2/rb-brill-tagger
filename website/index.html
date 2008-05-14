@@ -49,19 +49,29 @@
 	<h2>Installing</h2>
 
 
-	<p><pre class='syntax'>sudo gem install rbtagger</pre></p>
+	<p><pre class='syntax'>sudo gem install ruletagger</pre></p>
 
 
 	<h2>The basics</h2>
 
 
 	<p><pre class='syntax'>
+<span class="ident">require</span> <span class="punct">'</span><span class="string">rbtagger</span><span class="punct">'</span>
+
+<span class="comment"># Using the rule tagger</span>
 <span class="ident">tagger</span> <span class="punct">=</span> <span class="constant">Brill</span><span class="punct">::</span><span class="constant">Tagger</span><span class="punct">.</span><span class="ident">new</span><span class="punct">(</span> <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">LEXICON</span><span class="punct">&quot;),</span>
                             <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">LEXICALRULEFILE</span><span class="punct">&quot;),</span>
                             <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">CONTEXTUALRULEFILE</span><span class="punct">&quot;)</span> <span class="punct">)</span>
 <span class="ident">docs</span><span class="punct">.</span><span class="ident">each</span> <span class="keyword">do</span><span class="punct">|</span><span class="ident">doc</span><span class="punct">|</span>
   <span class="ident">tagger</span><span class="punct">.</span><span class="ident">tag</span><span class="punct">(</span> <span class="constant">File</span><span class="punct">.</span><span class="ident">read</span><span class="punct">(</span> <span class="ident">doc</span> <span class="punct">)</span> <span class="punct">)</span>
 <span class="keyword">end</span>
+
+<span class="comment"># Using the word tagger</span>
+<span class="ident">tagger</span> <span class="punct">=</span> <span class="constant">Word</span><span class="punct">::</span><span class="constant">Tagger</span><span class="punct">.</span><span class="ident">new</span><span class="punct">(</span> <span class="punct">['</span><span class="string">cat</span><span class="punct">','</span><span class="string">hat</span><span class="punct">'],</span> <span class="symbol">:words</span> <span class="punct">=&gt;</span> <span class="number">4</span> <span class="punct">)</span>
+<span class="ident">tags</span> <span class="punct">=</span> <span class="ident">tagger</span><span class="punct">.</span><span class="ident">execute</span><span class="punct">(</span> <span class="punct">'</span><span class="string">the cat and the hat</span><span class="punct">'</span> <span class="punct">)</span>
+<span class="ident">assert_equal</span><span class="punct">(</span> <span class="punct">[&quot;</span><span class="string">cat</span><span class="punct">&quot;,</span> <span class="punct">&quot;</span><span class="string">hat</span><span class="punct">&quot;],</span> <span class="ident">tags</span> <span class="punct">)</span>
+
+
 </pre></p>
 
 

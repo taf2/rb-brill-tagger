@@ -16,12 +16,22 @@ h2. Installing
 h2. The basics
 
 <pre syntax="ruby">
+require 'rbtagger'
+
+# Using the rule tagger
 tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
                             File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
                             File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
 docs.each do|doc|
   tagger.tag( File.read( doc ) )
 end
+
+# Using the word tagger
+tagger = Word::Tagger.new( ['cat','hat'], :words => 4 )
+tags = tagger.execute( 'the cat and the hat' )
+assert_equal( ["cat", "hat"], tags )
+
+
 </pre>
 
 h2. Forum
