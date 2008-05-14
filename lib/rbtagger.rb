@@ -4,3 +4,6 @@ $:.unshift(File.dirname(__FILE__)) unless
 module RbTagger
   
 end
+
+require 'word/tagger'
+require 'brill/tagger'

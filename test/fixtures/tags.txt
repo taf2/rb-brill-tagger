@@ -1,0 +1,976 @@
+abdominal hernia
+abdominal pain
+abortion
+abscess
+abuse emotional
+abuse physical
+acanthosis nigricans
+accident
+acne
+acoustic neuroma
+acquired immune deficiency syndrome
+actinic keratosis
+active living
+acupressure
+acupuncture
+acute lymphoblastic leukemia
+acute myelogenous leukemia
+addiction
+adoption
+adrenal cancer
+adrenal gland
+age
+alcohol abuse
+alexander technique
+allergic rhinitis
+allergist
+allergy
+alzheimer's disease
+amnesia
+amyotrophic lateral sclerosis
+anal itching
+anatomy
+anemia
+anesthesia
+anesthesiologist
+anesthesiology
+angina
+angina pectoris
+angioplasty
+anisocoria
+ankle
+anorexia nervosa
+anti-aging
+antibiotic induced diarrhea
+anticoagulation
+antimicrobial agent
+antineoplastic agent
+anus
+anxiety
+anxiety disorder
+aortic aneurysm
+aortic stenosis
+aortic valve calcification
+aortic valve regurgitation
+aortic valve stenosis
+aphthous stomatitis
+appearance
+appendectomy
+appendix
+aromatherapy 
+arrhythmia
+art therapy
+arteriovenous fistula
+arteriovenous malformation
+arthritis
+arthroscopy
+asbestosis
+ascending cholangitis
+aspergers syndrome
+aspergillosis
+asthma
+astrocytoma
+ataxia
+atelectasis
+atherosclerosis
+atopic dermatitis
+atrial fibrillation
+atrial septal defect
+attention deficit disorder
+attention deficit hyperactivity disorder
+autism
+autoimmune disease
+autonomic nervous system
+avian flu
+ayurveda
+baby
+back
+back injury
+back pain
+back surgery
+bacterial infection
+bacterial vaginosis
+bariatric surgery
+basal cell carcinoma
+beauty
+behavior
+benign prostatic hypertrophy
+bereavement
+berger's disease
+beverage
+binge eating
+biofeedback
+biologically based medicine
+biotech
+bipolar disorder
+birth defect
+bladder
+bladder cancer
+bleeding disorder
+blister
+bloating
+blood disorder
+blood transfusion
+blood/lymphatic system
+body work
+bone
+bone marrow
+bone marrow transplant
+borderline personality disorder
+botanically based medicine
+botulinum toxin
+botulism
+bradycardia
+brain
+brain cancer
+brain tumor
+breast
+breast cancer
+breast lump
+breast mass
+breast reduction surgery
+bronchitis
+bulimia
+bulimia nervosa
+bundle branch block
+bunion
+burn
+burning mouth
+bursitis
+callus
+campylobacter jejuni
+cancer
+cancer pain
+candidiasis
+cardiac arrest
+cardiac catheterization
+cardiac stent
+cardiac stress test
+cardiac surgeon
+cardiac valvuloplasty
+cardiologist
+cardiomyopathy
+cardiovascular system
+caregiver
+caregiving
+carotid endarterectomy
+carpal tunnel release
+carpal tunnel syndrome
+cataract
+cellulitis
+central nervous system
+cerebral palsy
+cerebritis
+cervical cancer
+cervix
+cesarean section
+cheilitis
+chemotherapy
+chest pain
+chicken pox
+child development
+childbirth
+chiropractor
+chlamydia
+cholecystectomy
+cholecystitis
+choledocolithiasis
+cholelithiasis
+cholesteatoma
+cholesterol
+chronic adrenocortical insufficiency
+chronic bronchitis
+chronic lymphocytic leukemia
+chronic myelogenous leukemia
+chronic obstructive pulmonary disease
+chronic pain
+circulation
+cirrhosis
+claudication
+clinical trial
+cluster headache
+coarctation of the aorta
+colectomy
+colitis
+colon
+colon cancer
+colon polyps
+colorectal cancer
+colorectal surgeon
+colorectal surgery
+combined therapy
+common cold
+common wart
+community health service
+complementary therapy
+complication
+condom
+congenital heart disease
+congestive heart failure
+conjunctivitis
+connective tissue disease
+constipation
+contraceptive device
+contraceptive sponge
+cooking
+corn
+cornea
+corneal ulceration
+coronary artery bypass graft
+coronary artery disease
+cough
+counseling
+counselor
+couple
+craniosacral massage
+cranium
+crohns disease
+cyanosis
+cyclothymia
+cyst
+cystic fibrosis
+dandruff
+dating
+deafness
+death
+debridement
+deep venous thrombosis
+degenerative disk disease
+delivery
+dementia
+dental care
+dentist
+depressed mood
+depression
+dermatographia
+dermatologist
+dermatology
+dermatomyositis
+detoxification
+developmental disability
+developmental psychiatry
+diabetes gestational
+diabetes pre-diabetes
+diabetes type 1
+diabetes type 2
+diabetic foot ulcer
+diabetic nephropathy
+diabetic retinopathy
+diagnostic imaging
+diagnostic procedure
+diaphragm
+diarrhea
+diet
+digestive disorder
+dilatation and curettage
+disability
+disabled
+diskectomy
+dislocation
+dissociative disorder
+diverticulitis
+diverticulosis
+doctor
+double vision
+down syndrome
+dreamwork
+drowning
+drug
+drug abuse
+dry skin
+dysdiadochokinesia
+dysesthesia
+dysfunctional uterine bleeding
+dyslexia
+dysmetria
+dyspareunia
+dysphagia
+dysphasia
+dyspnea
+dysuria
+ear
+eating disorder
+economic
+eczema
+edema
+elbow
+electrocardiogram
+embryology
+emergency medicine
+emergency medicine physician
+emphysema
+end stage renal disease
+endocarditis
+endocrine system
+endocrinologist
+endometrial cancer
+endometriosis
+energy medicine
+environment
+epidemiology
+erectile dysfunction
+escherichia coli
+esophageal cancer
+esophageal varices
+esophagus
+ethnicity
+exercise
+eye
+eyelid
+face
+fall
+fallopian tube
+family
+family medicine
+family physician
+family practitioner
+fatigue
+fecal incontinence
+feldenkrais method
+fertility
+fever
+fibrocystic breast tissue
+fibroid uterus
+fibromyalgia
+first aid
+first trimester
+fitness
+folliculitis
+food
+food poisoning
+foot
+fracture
+fragile x
+friend
+functional food
+fungal infection
+gait dysfunction
+gallbladder
+gambling
+gammopathies
+gastrectomy
+gastric cancer
+gastritis
+gastroenterologist
+gastroesophogeal reflux disease
+gastrointestinal system
+gender
+general surgeon
+generalized anxiety disorder
+geneticist
+genetics
+genital wart
+genitourinary system
+geriatrician
+giardia
+giardia lamblia
+glaucoma
+glioblastoma
+glomerulonephritis
+gonorrhea
+goodpasture's syndrome
+gout
+government
+grief
+guided imagery
+gums
+gynecologic oncologist
+gynecologist
+gynecology
+hair
+hair loss
+hand
+hashimoto's thyroiditis
+hay fever
+head injury
+headache
+heal
+healing touch
+health alert
+healthcare delivery system
+healthcare facility
+healthy living
+hearing impairment
+heart
+heart disease
+heart failure
+heart health
+heart murmur
+heart transplant
+heart valve disease
+hematemesis
+hematochezia
+hematologist
+hematoma
+hematuria
+hemochromatosis
+hemodialysis
+hemophilia
+hemorrhoids
+hepatitis
+hepatitis a
+hepatitis b
+hepatitis c
+hepatologist
+herb
+hernia
+herniorrhaphy
+herpes
+herpes simplex ulcers
+herpes zoster
+hiatal hernia
+high risk pregnancy
+hip
+hoarseness
+hodgkins lymphoma
+holistic health
+holistic nutrition
+holter monitor
+home
+home care
+homeopathy
+hospitalist
+housing
+human immunodeficiency virus
+human papillomavirus
+hydrocele
+hydrocephalus
+hydronephrosis
+hypercalcemia
+hypercholesterolemia
+hyperhydrosis
+hyperkalemia
+hypernatremia
+hyperparathyroidism
+hypertension
+hyperthyroidism
+hypertriglyceridemia
+hypnotherapy
+hypocalcemia
+hypoglycemia
+hypokalemia
+hyponatremia
+hypoparathyroidism
+hypoplastic left heart syndrome
+hypotension
+hypothermia
+hypothyroidism
+hypovolemia
+ichthyosis
+ileus
+immune system
+immunization
+immunologist
+immunology
+impetigo
+implant
+implantable cardioverter defibrillator
+impulsive disorder
+infant
+infection
+infection control
+infectious disease
+infectious disease specialist
+infertility
+influenza
+influenza avian influenza
+ingrown toenail
+inguinal hernia
+insomnia
+insurance
+internal medicine
+internist
+interstitial cystitis
+interstitial nephritis
+intestine
+iron deficiency anemia
+irritable bowel syndrome
+japanese medicine
+jaundice
+jaw
+jin shin jyutsu
+jin shin-do
+joint
+juvenile rheumatoid arthritis
+kid
+kidney
+kidney cancer
+kidney disease
+kidney failure
+kidney transplant
+kids
+knee
+knee injury
+labor
+lactose intolerance
+laminectomy
+laparoscopic procedure
+laryngeal cancer
+larynx
+left ventricular assist device
+leg
+lens
+leukemia
+libido
+lice
+lichen nitidus
+lichen sclerosis
+lichen simplex
+lifestyle
+lipoma
+liposuction
+liver
+liver cancer
+liver disease
+liver transplant
+living well
+long qt syndrome
+lumpectomy
+lung
+lung cancer
+lung disease environmental
+lung disease occupational
+lung transplant
+lyme disease
+lymphadenopathy
+lymphedema
+lymphoma
+macrobiotics
+macular degeneration
+major depression
+major multiple trauma
+malaria
+male breast cancer
+malnutrition
+manipulative & body based medicine
+marriage
+marriage & family therapist
+massage
+mastectomy
+measles
+medicaid
+medical malpractice
+medical oncologist
+medicare
+medication
+medigap
+meditation
+medullablastoma
+melanoma
+memory impairment
+mens health
+meningioma
+meningitis
+menopause
+menorrhagia
+menses
+mental health
+mental retardation
+metabolic disorders
+metastatic brain cancer
+metrorrhagia
+migraine headache
+mind-body medicine
+mineral
+mitral valve prolapse
+mitral valve regurgitation
+mitral valve stenosis
+mole
+molluscum contagiosum
+mononucleosis
+mood disorder
+morphea
+movement disorder
+multiple myeloma
+multiple sclerosis
+muscle
+musculoskeletal pain
+music therapy
+myasthenia gravis
+myocardial infarction
+myringotomy
+nail
+nail fungus
+native american healing
+natural health
+naturopathy
+nausea
+neck
+neck injury
+neck pain
+neonatal intensive care
+neonatologist
+nephritis
+nephrolithiasis
+nephrologist
+nerve
+nervous system
+neurodermatitis
+neurologist
+neuropathic pain
+neuropathy
+neuropsychologist
+neurosurgeon
+neurosurgery
+neutropenia
+newborn care
+non-hodgkins lymphoma
+normal vaginal delivery
+nose
+nose bleeds
+nuclear medicine specialist
+nutrition
+obesity
+obsessive compulsive disorder
+obstetrician
+obstetrician gynecologist
+occupational therapist
+occupational therapy
+oligodendroglioma
+oncologist
+ophthalmologist
+oppositional defiant disorder
+optic neuritis
+oral & maxillofacial surgeon
+oral contraceptive pills
+oral health
+oral hygiene
+organ donation
+organ transplantation
+orthopedic surgeon
+orthopnea
+osteoarthritis
+osteopathic medicine
+osteoporosis
+otitis externa
+otitis media
+otolaryngologist
+otolaryngology
+ovarian cancer
+ovarian cysts
+ovary
+overactive bladder
+overdose
+pain
+pain medicine specialist
+palpitations
+pancreas
+pancreatic cancer
+pancreatic transplant
+pancreatitis
+panic attack
+papanicolaou smear
+paralysis
+parasite
+parathyroid gland
+parenting
+paresthesia
+parkinsons disease
+patent ductus arteriosus
+pathologist
+pathology
+patient rights
+pediatrician
+pediatrics
+pelvic inflammatory disease
+pelvic pain
+pemphigoid
+pemphigus
+penile discharge
+penile implant
+penile lesions
+penis
+peptic ulcers
+pericarditis
+periorbital cellulitis
+peripheral vascular disease
+permanent pace maker
+pernicious anemia
+personality
+personality disorder
+perspiration
+pharyngeal cancer
+phlebitis
+phobia
+physiatrist
+physical medicine and rehabilitation
+physical medicine and rehabilitation specialist
+physical therapist
+physical therapy
+physiology
+pilonidal cyst
+pituitary adenoma
+pituitary gland
+pityriasis rosea
+plantar wart
+plastic surgeon
+plastic surgery
+pleural effusion
+pleurisy
+pleuritis
+pneumonia
+pneumothorax
+podiatrist
+podiatry
+poison ivy rash
+polarity therapy
+polio
+polycystic kidney disease
+polydipsia
+polyphagia
+polyuria
+porphyria
+postnatal care
+postpartum depression
+post-traumatic stress disorder
+pre menstrual syndrome
+pregnancy
+pregnancy complication
+pregnancy planning
+pregnancy stages
+prenatal care
+pressure point therapy
+pressure ulcer
+prevention
+preventive medicine
+preventive medicine specialist
+primary care physician
+prostate cancer
+prostate gland
+prostatitis
+prosthetic
+protozoan
+psoriasis
+psychiatrist
+psychoanalysis
+psychologist
+psychology
+psychosexual disorder
+psychosis
+psychotherapy
+psychotic disorders
+public health
+pulmonary edema
+pulmonary embolus
+pulmonary stenosis
+pulmonary valve stenosis
+pulmonary vascular disease
+pyoderma
+pyoderma gangrenosum
+qi gong
+radiation oncologist
+radiation therapy
+radiculopathy
+radiologist
+radiology
+rash
+recipe
+recover
+rectal bleeding
+rectum
+reflexology
+reiki
+reiter's syndrome
+relationship
+relaxation therapy
+renal artery stenosis
+renal cell carcinoma
+research
+resident
+respiratory failure
+respiratory system
+retina
+retirement
+rett syndrome
+rheumatoid arthritis
+rheumatologist
+rheumatology
+rhinovirus
+rib
+rickettsia
+rosacea
+rotator cuff tear
+sacral dimple
+safety
+salivary gland
+sarcoma
+scabies
+schizophrenia
+scleroderma
+scoliosis
+scrotum
+seasonal affective disorder
+second trimester
+seizure disorder
+sense
+sepsis
+severe acute respiratory syndrome
+sexual addiction
+sexuality
+sexually transmitted disease
+shamanism
+shigella
+shin
+shock
+shoulder
+shoulder injury
+sickle cell anemia
+side effect
+single
+sinusitis
+sjogren's syndrome
+skin
+skin cancer
+sleep
+sleep apnea
+sleep disorder
+small bowel obstruction
+small intestine
+smell
+smoking
+smoking cessation
+social anxiety
+social worker
+speech
+speech and language pathologist
+spermacide
+spermatocele
+spinal cord
+spinal cord abscess
+spinal cord injury
+spinal stenosis
+spirituality
+spleen
+splenectomy
+spontaneous abortion
+sports
+sports medicine
+sprain
+squamous cell carcinoma
+sterilization
+stomach
+strain
+strep throat
+stress
+stroke
+substance abuse
+sun burn
+sun damage
+supplement
+supraventricular tachycardia
+surgery
+sweets syndrome
+symptom
+syncope
+syphilis
+systemic lupus erythematosis
+tai chi
+taste
+tear duct
+teen
+temperature sensitivity
+temporal arteritis
+tendon rupture
+tendonitis
+tension headache
+testicular cancer
+testicular mass
+testicular pain
+testicular torsion
+testis
+tetralogy of fallot
+thalassemia
+therapeutic touch
+therapy
+third trimester
+thoracic surgeon
+thoracic surgery
+throat
+thrombocytopenia
+thyroid
+thyroid cancer
+tibetan medicine
+tilt table test
+tinea corpora
+tinea pedis
+tinea versicolor
+tinnitus
+tobacco
+toe
+tongue
+tonsillectomy
+tonsillitis
+total hip arthroplasty
+total knee arthroplasty
+tourettes syndrome
+toxic chemical
+toxic megacolon
+toxicology
+tracheostomy
+traditional chinese medicine
+trager approach
+trans urethral radical prostatectomy
+transplant surgeon
+transportation
+transposition of the great arteries
+trauma
+traumatic brain injury
+traumatic injury
+travel
+trichomoniasis
+trigeminal neuralgia
+truncus arteriosus
+tuberculosis
+tubular and cystic kidney disorders
+ulcer
+ulcerative colitis
+upper respiratory tract infection
+ureters
+urethra
+urethral cancer
+urinary incontinence
+urinary tract infection
+urination
+urologist
+urology
+urticaria
+uterine cancer
+uterus
+vaccines
+vagina
+vaginal discharge
+vaginal itching
+vaginal yeast infection
+varicella zoster
+varicocele
+varicose vein
+vascular surgeon
+vascular surgery
+ventricular fibrillation
+ventricular septal defect
+ventricular tachycardia
+vertigo
+viral gastroenteritis
+viral infection
+virus
+vision
+visual impairment
+visualization
+vitamin
+vitiligo
+vomiting
+vulva
+weakness
+weight management
+west nile virus
+wheezing
+whole medical systems
+wilms tumor
+womens health
+work
+work relationships
+wound
+wrist
+xerosis
+x-ray
+yoga
