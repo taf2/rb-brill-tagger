@@ -11,7 +11,7 @@ This work is based on the work of Eric Brill
 
 h2. Installing
 
-<pre syntax="bash">sudo gem install ruletagger</pre>
+<pre syntax="bash">sudo gem install rbtagger</pre>
 
 h2. The basics
 
