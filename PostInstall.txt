@@ -1,7 +1,1 @@
-
-For more information on rb-brill-tagger, see http://rbtagger.rubyforge.org
-
-NOTE: Change this information in PostInstall.txt 
-You can also delete it if you don't want it.
-
-
+For more information on rbtagger, see http://rbtagger.rubyforge.org
