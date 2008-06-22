@@ -1,6 +1,6 @@
 h1. rbtagger
 
-<h4 style="float:right;padding-right:10px;"> &#x2192; 'rb-brill-tagger'</h4>
+<h4 style="float:right;padding-right:10px;"> &#x2192; 'rbtagger'</h4>
 
 
 h2. What
@@ -11,7 +11,10 @@ This work is based on the work of Eric Brill
 
 h2. Installing
 
-<pre syntax="bash">sudo gem install rbtagger</pre>
+<pre syntax="bash">
+wget http://rubyforge.org/frs/download.php/37542/rbtagger-0.2.3.gem
+gem install rbtagger-0.2.3.gem
+</pre>
 
 h2. The basics
 
@@ -59,5 +62,4 @@ This code is free to use under the terms of the MIT license.
 
 h2. Contact
 
-Comments are welcome. Send an email to "FIXME full name":mailto:FIXME email via the "forum":http://groups.google.com/group/rb-brill-tagger
-
+Comments are welcome. Send an email to "Todd A. Fisher":mailto:rb-brill-tagger@googlegroups.com email via the "forum":http://groups.google.com/group/rb-brill-tagger
