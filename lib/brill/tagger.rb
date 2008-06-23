@@ -9,6 +9,34 @@ module Brill
       Brill::Tagger.load_contextual_rules(@tagger,contextual_rules)
     end
 
+    # returns similar results as tag, but further reduced by only selecting nouns
+    def suggest( text, max = 10 )
+      tags = tag(text)
+      results = tags.select{|tag| tag.last.match(/NN/) }
+      if results.size > max
+        counts = {}
+        tags = []
+        results.each {|tag| counts[tag.first] = 0 }
+        results.each do |tag|
+          counts[tag.first] += 1
+          tags << tag if counts[tag.first] == 1
+        end
+        tags.map!{|tag| [tag.first, tag.last,counts[tag.first]]}
+        t = 1
+        until tags.size <= max
+          tags = tags.sort_by{|tag| tag.last}.select{|tag| tag.last > t }
+          t += 1
+          if t == 5
+            tags = tags.reverse[0..max]
+            break
+          end
+        end
+        tags
+      else
+        results
+      end
+    end
+
     # Tag a body of text
     # returns an array like [[token,tag],[token,tag]...[token,tag]] 
     #

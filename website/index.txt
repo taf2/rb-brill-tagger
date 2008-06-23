@@ -12,16 +12,15 @@ This work is based on the work of Eric Brill
 h2. Installing
 
 <pre syntax="bash">
-wget http://rubyforge.org/frs/download.php/37542/rbtagger-0.2.3.gem
-gem install rbtagger-0.2.3.gem
+gem install rbtagger
 </pre>
 
 h2. The basics
 
+<h4>Using the rule tagger</h4>
 <pre syntax="ruby">
 require 'rbtagger'
 
-# Using the rule tagger
 tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
                             File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
                             File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
@@ -29,12 +28,17 @@ docs.each do|doc|
   tagger.tag( File.read( doc ) )
 end
 
-# Using the word tagger
+tagger.suggest( File.read("sample.txt") )
+=> [["doctor", "NN", 3], ["treatment", "NN", 5]]
+</pre>
+
+<h4>Using the word tagger</h4>
+<pre syntax="ruby">
+require 'rbtagger'
+
 tagger = Word::Tagger.new( ['cat','hat'], :words => 4 )
 tags = tagger.execute( 'the cat and the hat' )
 assert_equal( ["cat", "hat"], tags )
-
-
 </pre>
 
 h2. Forum

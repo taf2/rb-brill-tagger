@@ -54,6 +54,11 @@ Although many newly diagnosed patients fear they will not be able to keep workin
     puts "time: #{duration} sec #{count.to_f/duration} docs/sec"
   end
 
+  def test_suggest
+    results = tagger.suggest( SAMPLE_DOC )
+    assert_equal [["doctor", "NN", 3], ["treatment", "NN", 5]], results
+  end
+
 private
   def tagger
     $rtagger
