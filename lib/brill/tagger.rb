@@ -48,7 +48,7 @@ module Brill
         end
         tag
       }
-      results = tags.select{|tag| tag.last.match(/NN/) }
+      results = tags.select{|tag| tag.last.match(/NN/) and tag.first.size > 3 }
       if results.size > max
         counts = {}
         tags = []
