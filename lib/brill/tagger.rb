@@ -12,14 +12,50 @@ module Brill
     # returns similar results as tag, but further reduced by only selecting nouns
     def suggest( text, max = 10 )
       tags = tag(text)
+      #puts tags.inspect
+      ptag = [nil,nil]
+      # join NNP's together for names
+      reduced_tags = []
+      mappings = {} # keep a mapping of the joined words to expand
+      tags.each{|tag| 
+        if ptag.last == 'NNP' and tag.last == 'NNP' and !ptag.first.match(/\.$/)
+          ptag[0] += " " + tag.first
+          # before combining these two create a mapping for each word to each word
+          words = ptag.first.split(/\s/)
+          i = 0
+          #puts words.inspect
+          until (i + 1) == words.size
+            mappings[words[i]] = ptag.first
+            mappings[words[i+1]] = ptag.first
+            i += 1
+          end
+          #puts mappings.inspect
+        elsif tag.last == 'NNP'
+          ptag = tag
+        elsif tag.last != 'NNP' and ptag.first != nil
+          reduced_tags << ptag
+          reduced_tags << tag if tag.last.match( /^\w+$/ ) and tag.first.match(/^\w+$/)
+          ptag = [nil,nil]
+        elsif tag.last.match( /^\w+$/ ) and tag.first.match(/^\w+$/)
+          reduced_tags << tag
+        end
+      }
+      # now expand any NNP that appear
+      tags = reduced_tags.map{|tag|
+        if tag.last == 'NNP'
+          #puts "#{tag.first} => #{mappings[tag.first]}"
+          tag[0] = mappings[tag.first] if mappings.key?(tag.first)
+        end
+        tag
+      }
       results = tags.select{|tag| tag.last.match(/NN/) }
       if results.size > max
         counts = {}
         tags = []
         results.each {|tag| counts[tag.first] = 0 }
         results.each do |tag|
-          counts[tag.first] += 1
-          tags << tag if counts[tag.first] == 1
+          tags << tag if counts[tag.first] == 0
+          counts[tag.first] += tag.last == 'NNP' ? 3 : (tag.last == 'NNS' ? 2 : 1)
         end
         tags.map!{|tag| [tag.first, tag.last,counts[tag.first]]}
         t = 1
@@ -41,6 +77,8 @@ module Brill
     # returns an array like [[token,tag],[token,tag]...[token,tag]] 
     #
     def tag( text )
+      text = text.gsub(/dont/,"don't").gsub(/Dont/,"Don't")
+      text = text.gsub(/youre/,"you're")
       tokens = Brill::Tagger.tokenize( text )
       tags = Brill::Tagger.tag_start( tokens )
 
