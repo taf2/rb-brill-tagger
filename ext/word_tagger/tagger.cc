@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
 #include "tagger.h"
 #include <set>
