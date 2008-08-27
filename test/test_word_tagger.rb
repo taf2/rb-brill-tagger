@@ -16,6 +16,14 @@ class TestWordTagger < Test::Unit::TestCase
     puts "Duration: #{Time.now - timer} sec"
   end
 
+  def test_sample_bug
+    tags = ["foo", "bar", "baz", "squishy", "yummy"]
+    txt = 'This is some sample text. Foo walked into a bar. The bartender said "What can I get you?" Foo said he wanted something yummy - like a baz.'
+    tagger = Word::Tagger.new tags, :words => 4
+    result_tags = tagger.execute( txt )
+    assert_equal ["bar", "baz", "foo", "yummy"], result_tags
+  end
+
   def test_ngram_size3
     timer = Time.now
     text = "This body of text contains something like ventricular septal defect"

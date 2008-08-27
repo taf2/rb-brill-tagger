@@ -101,14 +101,15 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
     for( short j = 1; (j <= this->nwords) && ((i+j) < words.size()); ++j ) {
       matched = this->tags.find( match_word );
       if( matched != this->tags.end() ){
-        //printf( "word: %d:(%s->%s)\n", i, match_word.c_str(), matched->second.c_str() );
         std::map<std::string, int>::iterator mloc = matched_tags.find( matched->second );
         if( mloc == matched_tags.end() ) {
           matched_tags[matched->second] = 1; // count 1
+          //printf( "word: %d:(%s->%s) %d, hits: 1\n", i, match_word.c_str(), matched->second.c_str(), j );
         }
         else {
           mloc->second++;
           if( max_count < mloc->second ) { max_count = mloc->second; }
+          //printf( "word: %d:(%s->%s) %d, hits: %d\n", i, match_word.c_str(), matched->second.c_str(), j, mloc->second );
         }
       }
       // stem each word and compare against our tag bank
@@ -129,11 +130,22 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
       }
     }
   }
+ 
+  std::vector< std::string > reduced_tags;
+
+  // now we have a list of tags that match within the document text, check if we need to reduce the tags
+  if( matched_tags.size() < max ) {
+    // prepare the return vector
+    for( std::map<std::string, int>::iterator mloc = matched_tags.begin(); mloc != matched_tags.end(); ++mloc ){
+      reduced_tags.push_back( mloc->first );
+    }
+    return reduced_tags;
+  }
 
   // now that we have all the matched tags reduce to max using the tag frequency as a reduction measure
   std::vector< std::pair<std::string,int> > sorted_tags;
 
-  //printf( "max frequency: %d\n", max_count );
+  //printf( "max frequency: %d, total tagged: %d, reducing to %d\n", max_count, matched_tags.size(), max );
   for( std::map<std::string, int>::iterator mloc = matched_tags.begin(); mloc != matched_tags.end(); ++mloc ){
     //printf( "word: %s, frequency: %d\n", mloc->first.c_str(), mloc->second ); 
     sorted_tags.push_back(*mloc);
@@ -142,14 +154,13 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
   // sort the tags in frequency order
   std::sort( sorted_tags.begin(), sorted_tags.end(), WordComparitor() );
 
-  std::vector< std::string > reduced_tags;
 
   std::vector< std::pair<std::string, int> >::iterator mloc;
   do {
     for(mloc = sorted_tags.begin(); mloc != sorted_tags.end(); ++mloc ) {
       std::pair< std::string, int > word_freq = *mloc;
-     // printf( "word: %s, frequency: %d\n", word_freq.first.c_str(), word_freq.second );
-      //printf( "word: %s, frequency: %d\n", mloc->first.c_str(), mloc->second ); 
+      printf( "word: %s, frequency: %d\n", word_freq.first.c_str(), word_freq.second );
+      printf( "word: %s, frequency: %d\n", mloc->first.c_str(), mloc->second ); 
       if( word_freq.second < max_count ) { 
         sorted_tags.erase( mloc );
         break;
