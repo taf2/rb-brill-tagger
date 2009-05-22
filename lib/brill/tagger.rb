@@ -18,10 +18,12 @@ module Brill
 
     # given a body of text return a list of adjectives
     def adjectives( text )
+      tag(text).select{|t| t.last == 'JJ' }
     end
 
     # given a body of text return a list of nouns
     def nouns( text )
+      tag(text).select{|t| t.last.match(/NN/) }
     end
 
     # returns similar results as tag, but further reduced by only selecting nouns
@@ -92,6 +94,7 @@ module Brill
     # returns an array like [[token,tag],[token,tag]...[token,tag]] 
     #
     def tag( text )
+      # XXX: the list of contractions is much larger then this... find'em
       text = text.gsub(/dont/,"don't").gsub(/Dont/,"Don't")
       text = text.gsub(/youre/,"you're")
       tokens = Brill::Tagger.tokenize( text )

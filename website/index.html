@@ -175,9 +175,7 @@ gem install rbtagger
 <p><pre class='syntax'>
 <span class="ident">require</span> <span class="punct">'</span><span class="string">rbtagger</span><span class="punct">'</span>
 
-<span class="ident">tagger</span> <span class="punct">=</span> <span class="constant">Brill</span><span class="punct">::</span><span class="constant">Tagger</span><span class="punct">.</span><span class="ident">new</span><span class="punct">(</span> <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">LEXICON</span><span class="punct">&quot;),</span>
-                            <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">LEXICALRULEFILE</span><span class="punct">&quot;),</span>
-                            <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">CONTEXTUALRULEFILE</span><span class="punct">&quot;)</span> <span class="punct">)</span>
+<span class="ident">tagger</span> <span class="punct">=</span> <span class="constant">Brill</span><span class="punct">::</span><span class="constant">Tagger</span><span class="punct">.</span><span class="ident">new</span>
 <span class="ident">docs</span><span class="punct">.</span><span class="ident">each</span> <span class="keyword">do</span><span class="punct">|</span><span class="ident">doc</span><span class="punct">|</span>
   <span class="ident">tagger</span><span class="punct">.</span><span class="ident">tag</span><span class="punct">(</span> <span class="constant">File</span><span class="punct">.</span><span class="ident">read</span><span class="punct">(</span> <span class="ident">doc</span> <span class="punct">)</span> <span class="punct">)</span>
 <span class="keyword">end</span>
@@ -210,7 +208,7 @@ rake install_gem</pre>
 <h2>Contact</h2>
 <p>Comments are welcome. Send an email to <a href="mailto:rb-brill-tagger@googlegroups.com">Todd A. Fisher</a> email via the <a href="http://groups.google.com/group/rb-brill-tagger">forum</a></p>
     <p class="coda">
-      <a href="http://xullicious.blogspot.com/">Todd A. Fisher</a>, 23rd June 2008<br>
+      <a href="http://xullicious.blogspot.com/">Todd A. Fisher</a>, 21st May 2009<br>
       Theme extended from <a href="http://rb2js.rubyforge.org/">Paul Battley</a>
     </p>
 </div>

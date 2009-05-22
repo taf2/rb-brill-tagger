@@ -19,9 +19,7 @@ This software is made available under the MIT License, see LICENSE
 
 == SYNOPSIS:
 
- tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
-                             File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
-                             File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
+ tagger = Brill::Tagger.new
 
 == INSTALL:
 

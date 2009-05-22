@@ -139,6 +139,11 @@ TMZ.com: Britney celebrated getting overnights with her kids by going on a wild 
     puts results.inspect
   end
 
+  def test_adjectives
+    results = tagger.adjectives("So happy i get to bring my baby boy home tomorrow. Hospital tv is horrible, ten channels no one watches")
+    assert_equal [["happy", "JJ"], ["horrible", "JJ"]], results
+  end
+
 private
   def tagger
     $rtagger
