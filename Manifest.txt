@@ -46,6 +46,9 @@ lib/brill/tagger.rb
 lib/rbtagger.rb
 lib/rbtagger/version.rb
 lib/word/tagger.rb
+lib/brill/brown/CONTEXTUALRULEFILE
+lib/brill/brown/LEXICALRULEFILE
+lib/brill/brown/LEXICON
 script/console
 script/destroy
 script/generate
@@ -57,9 +60,6 @@ tasks/extconf.rake
 tasks/extconf/rule_tagger.rake
 tasks/extconf/word_tagger.rake
 tasks/website.rake
-test/CONTEXTUALRULEFILE
-test/LEXICALRULEFILE
-test/LEXICON
 test/docs/doc0.txt
 test/docs/doc1.txt
 test/docs/doc2.txt
