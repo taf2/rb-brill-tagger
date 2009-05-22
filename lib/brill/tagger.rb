@@ -2,11 +2,26 @@ require 'rule_tagger'
 
 module Brill
   class Tagger
-    def initialize( lexicon, lexical_rules, contextual_rules )
+    #
+    # will use the brown corpus as the default
+    #
+    def initialize( lexicon = nil, lexical_rules = nil, contextual_rules = nil)
       @tagger = ::Tagger::BrillTagger.new
-      Brill::Tagger.load_lexicon(@tagger,lexicon)
-      Brill::Tagger.load_lexical_rules(@tagger,lexical_rules)
-      Brill::Tagger.load_contextual_rules(@tagger,contextual_rules)
+      lexicon ||= File.join(File.dirname(__FILE__),"brown","LEXICON")
+      lexical_rules ||= File.join(File.dirname(__FILE__),"brown","LEXICALRULEFILE")
+      contextual_rules ||= File.join(File.dirname(__FILE__),"brown","CONTEXTUALRULEFILE")
+
+      Brill::Tagger.load_lexicon(@tagger, lexicon )
+      Brill::Tagger.load_lexical_rules(@tagger, lexical_rules )
+      Brill::Tagger.load_contextual_rules(@tagger, contextual_rules )
+    end
+
+    # given a body of text return a list of adjectives
+    def adjectives( text )
+    end
+
+    # given a body of text return a list of nouns
+    def nouns( text )
     end
 
     # returns similar results as tag, but further reduced by only selecting nouns

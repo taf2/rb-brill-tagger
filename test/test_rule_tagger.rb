@@ -33,11 +33,12 @@ Asked by Us if she were happy with the court outcome, Spears (clutching an Ed Ha
 Next up: A status hearing set for July 15.
 The couple last appeared in court May 6. Spears was granted extended visitation — three days a week from 9 a.m. to 5 p.m. — of Sean Preston, 2, and Jayden James, 20 months. 
 )
+SAMPLE_DOC3=%q(
+TMZ.com: Britney celebrated getting overnights with her kids by going on a wild shopping trip for herself.With L.A.'s finest at her service, it was a total clusterf**k outside of Fred Segal as Brit Brit made her way out. The scene was crazy -- and it was all... Read more
+)
   def setup
     if !defined?($tagger)
-      $rtagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
-                                    File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
-                                    File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
+      $rtagger = Brill::Tagger.new
     end
   end
 
@@ -134,6 +135,8 @@ The couple last appeared in court May 6. Spears was granted extended visitation 
     assert results.include?(["Britney Spears", "NNP", 6])
     assert results.include?(["Jamie Spears", "NNP", 12])
 #    puts results.inspect
+    results = tagger.suggest( SAMPLE_DOC3, 5 )
+    puts results.inspect
   end
 
 private
