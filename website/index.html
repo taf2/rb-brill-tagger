@@ -160,32 +160,19 @@
     <h1>rbtagger</h1>
     <div id="version" class="clickable" onclick='document.location = "http://rubyforge.org/projects/rbtagger"; return false'>
       <p>Get Version</p>
-      <a href="http://rubyforge.org/projects/rbtagger" class="numbers">0.2.6</a>
+      <a href="http://rubyforge.org/projects/rbtagger" class="numbers">0.3.0</a>
     </div>
-    <h4 style="float:right;padding-right:10px;"> &#x2192; &#8216;rbtagger&#8217;</h4>
-
-	<h2>What</h2>
-
-
-	<p>A Simple Ruby Rule-Based Part of Speech Tagger</p>
-
-
-	<p>This work is based on the work of Eric Brill</p>
-
-
-	<h2>Installing</h2>
-
-
-	<p><pre class='syntax'>
+    <h4 style="float:right;padding-right:10px;"> &amp;#x2192; &#8216;rbtagger&#8217;</h4>
+<h2>What</h2>
+<p>A Simple Ruby Rule-Based Part of Speech Tagger</p>
+<p>This work is based on the work of Eric Brill</p>
+<h2>Installing</h2>
+<p><pre class='syntax'>
 gem install rbtagger
 </pre></p>
-
-
-	<h2>The basics</h2>
-
-
+<h2>The basics</h2>
 <h4>Using the rule tagger</h4>
-<pre class='syntax'>
+<p><pre class='syntax'>
 <span class="ident">require</span> <span class="punct">'</span><span class="string">rbtagger</span><span class="punct">'</span>
 
 <span class="ident">tagger</span> <span class="punct">=</span> <span class="constant">Brill</span><span class="punct">::</span><span class="constant">Tagger</span><span class="punct">.</span><span class="ident">new</span><span class="punct">(</span> <span class="constant">File</span><span class="punct">.</span><span class="ident">join</span><span class="punct">(</span><span class="constant">File</span><span class="punct">.</span><span class="ident">dirname</span><span class="punct">(</span><span class="constant">__FILE__</span><span class="punct">),&quot;</span><span class="string">LEXICON</span><span class="punct">&quot;),</span>
@@ -197,53 +184,31 @@ gem install rbtagger
 
 <span class="ident">tagger</span><span class="punct">.</span><span class="ident">suggest</span><span class="punct">(</span> <span class="constant">File</span><span class="punct">.</span><span class="ident">read</span><span class="punct">(&quot;</span><span class="string">sample.txt</span><span class="punct">&quot;)</span> <span class="punct">)</span>
 <span class="punct">=&gt;</span> <span class="punct">[[&quot;</span><span class="string">doctor</span><span class="punct">&quot;,</span> <span class="punct">&quot;</span><span class="string">NN</span><span class="punct">&quot;,</span> <span class="number">3</span><span class="punct">],</span> <span class="punct">[&quot;</span><span class="string">treatment</span><span class="punct">&quot;,</span> <span class="punct">&quot;</span><span class="string">NN</span><span class="punct">&quot;,</span> <span class="number">5</span><span class="punct">]]</span>
-</pre>
-
+</pre></p>
 <h4>Using the word tagger</h4>
-<pre class='syntax'>
+<p><pre class='syntax'>
 <span class="ident">require</span> <span class="punct">'</span><span class="string">rbtagger</span><span class="punct">'</span>
 
 <span class="ident">tagger</span> <span class="punct">=</span> <span class="constant">Word</span><span class="punct">::</span><span class="constant">Tagger</span><span class="punct">.</span><span class="ident">new</span><span class="punct">(</span> <span class="punct">['</span><span class="string">cat</span><span class="punct">','</span><span class="string">hat</span><span class="punct">'],</span> <span class="symbol">:words</span> <span class="punct">=&gt;</span> <span class="number">4</span> <span class="punct">)</span>
 <span class="ident">tags</span> <span class="punct">=</span> <span class="ident">tagger</span><span class="punct">.</span><span class="ident">execute</span><span class="punct">(</span> <span class="punct">'</span><span class="string">the cat and the hat</span><span class="punct">'</span> <span class="punct">)</span>
 <span class="ident">assert_equal</span><span class="punct">(</span> <span class="punct">[&quot;</span><span class="string">cat</span><span class="punct">&quot;,</span> <span class="punct">&quot;</span><span class="string">hat</span><span class="punct">&quot;],</span> <span class="ident">tags</span> <span class="punct">)</span>
-</pre>
-
-	<h2>Forum</h2>
-
-
-	<p><a href="http://groups.google.com/group/rb-brill-tagger">http://groups.google.com/group/rb-brill-tagger</a></p>
-
-
-	<h2>How to submit patches</h2>
-
-
-	<p>Read the <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/">8 steps for fixing other people&#8217;s code</a> and for section <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups">8b: Submit patch to Google Groups</a>, use the Google Group above.</p>
-
-
-	<ul>
+</pre></p>
+<h2>Forum</h2>
+<p><a href="http://groups.google.com/group/rb-brill-tagger">http://groups.google.com/group/rb-brill-tagger</a></p>
+<h2>How to submit patches</h2>
+<p>Read the <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/">8 steps for fixing other people&#8217;s code</a> and for section <a href="http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups">8b: Submit patch to Google Groups</a>, use the Google Group above.</p>
+<ul>
 	<li>github: <a href="http://github.com/taf2/rb-brill-tagger/tree/master">http://github.com/taf2/rb-brill-tagger/tree/master</a></li>
-	</ul>
-
-
+</ul>
 <pre>git clone git://github.com/taf2/rb-brill-tagger.git</pre>
-
-	<h3>Build and test instructions</h3>
-
-
+<h3>Build and test instructions</h3>
 <pre>cd rb-brill-tagger
 rake test
 rake install_gem</pre>
-
-	<h2>License</h2>
-
-
-	<p>This code is free to use under the terms of the <span class="caps">MIT</span> license.</p>
-
-
-	<h2>Contact</h2>
-
-
-	<p>Comments are welcome. Send an email to <a href="mailto:rb-brill-tagger@googlegroups.com">Todd A. Fisher</a> email via the <a href="http://groups.google.com/group/rb-brill-tagger">forum</a></p>
+<h2>License</h2>
+<p>This code is free to use under the terms of the <span class="caps">MIT</span> license.</p>
+<h2>Contact</h2>
+<p>Comments are welcome. Send an email to <a href="mailto:rb-brill-tagger@googlegroups.com">Todd A. Fisher</a> email via the <a href="http://groups.google.com/group/rb-brill-tagger">forum</a></p>
     <p class="coda">
       <a href="http://xullicious.blogspot.com/">Todd A. Fisher</a>, 23rd June 2008<br>
       Theme extended from <a href="http://rb2js.rubyforge.org/">Paul Battley</a>

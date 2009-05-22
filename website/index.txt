@@ -21,9 +21,7 @@ h2. The basics
 <pre syntax="ruby">
 require 'rbtagger'
 
-tagger = Brill::Tagger.new( File.join(File.dirname(__FILE__),"LEXICON"),
-                            File.join(File.dirname(__FILE__),"LEXICALRULEFILE"),
-                            File.join(File.dirname(__FILE__),"CONTEXTUALRULEFILE") )
+tagger = Brill::Tagger.new
 docs.each do|doc|
   tagger.tag( File.read( doc ) )
 end
