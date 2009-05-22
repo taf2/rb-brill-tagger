@@ -28,6 +28,9 @@ end
 
 tagger.suggest( File.read("sample.txt") )
 => [["doctor", "NN", 3], ["treatment", "NN", 5]]
+
+tagger.nouns
+tagger.adjectives
 </pre>
 
 <h4>Using the word tagger</h4>
