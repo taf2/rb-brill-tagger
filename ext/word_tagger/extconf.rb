@@ -1,4 +1,5 @@
 require 'mkmf'
+$CFLAGS << ' -Wall'
 
 dir_config("word_tagger")
 have_library("c", "main")
