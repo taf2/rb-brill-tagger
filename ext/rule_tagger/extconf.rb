@@ -9,6 +9,6 @@ if !have_func('snprintf', 'stdio.h')
   raise "You must have snprintf available to compile this library"
 end
 
-CFLAGS='-Wall -g'
+CFLAGS='-Wall'
 
 create_makefile('rule_tagger')
