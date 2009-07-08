@@ -37,7 +37,7 @@ static std::vector<std::string> word_split(const std::string& s)
 
 static void word_downcase( std::string &word )
 {
-  for( int j = 0; j < word.size(); ++j ) {
+  for( std::string::size_type j = 0; j < word.size(); ++j ) {
     word[j] = tolower( word[j] );
   }
 }
@@ -82,11 +82,9 @@ std::string NWordTagger::stemWord( const std::string &word )const
   return stemmed;
 }
   
-std::vector<std::string> NWordTagger::execute( const char *text, short max )const
+int NWordTagger::execute_with_frequency( const char *text, std::map<std::string,int> &matched_tags, int &max_count )const
 {
-  int max_count = 0;
   std::vector<std::string> words = word_split( text );
-  std::map<std::string, int> matched_tags; // stores tags and frequency
   std::string match_word;
   std::map<std::string,std::string>::const_iterator matched;
 
@@ -130,16 +128,23 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
       }
     }
   }
- 
-  std::vector< std::string > reduced_tags;
+  return matched_tags.size();
+}
 
+int NWordTagger::execute( std::vector<std::string> &reduced_tags, const char *text, unsigned short max )const
+{
+  int max_count = 0;
+  std::map<std::string, int> matched_tags; // stores tags and frequency
+
+  execute_with_frequency(text, matched_tags, max_count);
+ 
   // now we have a list of tags that match within the document text, check if we need to reduce the tags
   if( matched_tags.size() < max ) {
     // prepare the return vector
     for( std::map<std::string, int>::iterator mloc = matched_tags.begin(); mloc != matched_tags.end(); ++mloc ){
       reduced_tags.push_back( mloc->first );
     }
-    return reduced_tags;
+    return reduced_tags.size();
   }
 
   // now that we have all the matched tags reduce to max using the tag frequency as a reduction measure
@@ -172,5 +177,5 @@ std::vector<std::string> NWordTagger::execute( const char *text, short max )cons
     reduced_tags.push_back( sorted_tags[i].first );
   }
 
-  return reduced_tags;
+  return matched_tags.size();
 }

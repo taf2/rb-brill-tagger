@@ -38,4 +38,10 @@ class TestWordTagger < Test::Unit::TestCase
     assert_equal( ["Cat", "hat"], tags )
   end
 
+  def test_freq_counts
+    tagger = Word::Tagger.new( ['Cat','hat'], :words => 4 )
+    tags = tagger.freq( 'the cAt and the hat the cAt and the hat the cAt and the hat the cAt and the hat' )
+    assert_equal( {"Cat"=>4, "hat"=>4}, tags )
+  end
+
 end

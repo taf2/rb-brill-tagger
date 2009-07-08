@@ -14,7 +14,14 @@ struct NWordTagger {
   short getNWords()const{ return nwords; }
   void setNWords( short words ){ nwords = words; }
 
-  std::vector<std::string> execute( const char *text, short max = 10 )const;
+  // return the number of matched tags
+  // fill results with matching tags in the text body
+  // keep the number of tags returned within the threshold of max. reducing tags by least frequent
+  int execute( std::vector<std::string> &reduced_tags, const char *text, unsigned short max = 10 )const;
+
+  // return the number of matched tags
+  // result is updated with a mapping of matched tags with their individual term frequency count
+  int execute_with_frequency( const char *text, std::map<std::string,int> &matched_tags, int &max_count )const;
 private:
   short nwords;
   struct stemmer *stemmer;
