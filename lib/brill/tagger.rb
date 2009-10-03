@@ -218,6 +218,11 @@ module Brill
 
     # this tokenize code is a port from perl
     def self.tokenize(text)
+      
+      if "1.9".respond_to?(:encoding)
+        text.force_encoding('ASCII-8BIT')
+      end
+      
       # Normalize all whitespace
       text = text.gsub(/\s+/,' ')
 
