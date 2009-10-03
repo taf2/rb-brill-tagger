@@ -17,4 +17,12 @@
 #define RSTRING_LEN(str) RSTRING(str)->len
 #endif
 
+#ifndef RARRAY_LEN
+#define RARRAY_LEN(ar) RARRAY(ar)->len
+#endif
+
+#ifndef RARRAY_PTR
+#define RARRAY_PTR(ar) RARRAY(ar)->ptr
+#endif
+
 #endif

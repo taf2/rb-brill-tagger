@@ -82,8 +82,8 @@ BrillTagger_apply_lexical_rules( VALUE self, VALUE tokens, VALUE tags, VALUE wor
 {
   TaggerContext *tc;
   int i = 0;
-  int token_length = RARRAY(tokens)->len;
-  int tags_length = RARRAY(tags)->len;
+  int token_length = RARRAY_LEN(tokens);
+  int tags_length = RARRAY_LEN(tags);
   int rules_length;
   VALUE fetched;
   int EXTRAWDS = NUM2INT( extrawds );
@@ -150,8 +150,8 @@ BrillTagger_default_tag_finish( VALUE self, VALUE tokens, VALUE tags )
   int i;
   VALUE fetched, word;
   char *tempstr;
-  int token_length = RARRAY(tokens)->len;
-  int tags_length = RARRAY(tags)->len;
+  int token_length = RARRAY_LEN(tokens);
+  int tags_length = RARRAY_LEN(tags);
   TaggerContext *tc;
 
   Data_Get_Struct( self, TaggerContext, tc );
@@ -182,8 +182,8 @@ static VALUE
 BrillTagger_apply_contextual_rules( VALUE self, VALUE tokens, VALUE tags, VALUE rmove )
 {
   int i;
-  int token_length = RARRAY(tokens)->len;
-  int tags_length = RARRAY(tags)->len;
+  int token_length = RARRAY_LEN(tokens);
+  int tags_length = RARRAY_LEN(tags);
   int rules_length;
   int restrict_move = NUM2INT( rmove );
   char **text_tags, **text_tokens;

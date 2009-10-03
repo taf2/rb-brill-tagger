@@ -21,6 +21,15 @@
 #define RSTRING_LEN(str) RSTRING(str)->len
 #endif
 
+#ifndef RARRAY_LEN
+#define RARRAY_LEN(ar) RARRAY(ar)->len
+#endif
+
+#ifndef RARRAY_PTR
+#define RARRAY_PTR(ar) RARRAY(ar)->ptr
+#endif
+
+
 static VALUE rb_Tagger;
 static VALUE rb_NWordTagger;
 
@@ -61,7 +70,7 @@ VALUE Tagger_load_tags( VALUE self, VALUE tagarr )
   NWordTagger *tagger;
   Data_Get_Struct( self, NWordTagger, tagger );
   std::set<std::string> tags;
-  int len = RARRAY(tagarr)->len;
+  int len = RARRAY_LEN(tagarr);
   for( int i = 0; i < len; ++i ){
     std::string tag = RSTRING_PTR( rb_ary_entry( tagarr, i ) );
     tags.insert(tag);
