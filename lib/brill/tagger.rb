@@ -218,19 +218,14 @@ module Brill
 
     # this tokenize code is a port from perl
     def self.tokenize(text)
-      
-      if "1.9".respond_to?(:encoding)
-        text.force_encoding('ASCII-8BIT')
-      end
-      
       # Normalize all whitespace
       text = text.gsub(/\s+/,' ')
 
       # translate some common extended ascii characters to quotes
-      text.gsub!(/#{145.chr}/,'`')
-      text.gsub!(/#{146.chr}/,"'")
-      text.gsub!(/#{147.chr}/,"``")
-      text.gsub!(/#{148.chr}/,"''")
+      text.gsub!(/‘/,'`')
+      text.gsub!(/’/,"'")
+      text.gsub!(/“/,"``")
+      text.gsub!(/”/,"''")
 
       # Attempt to get correct directional quotes
       # s{\"\b} { `` }g;
