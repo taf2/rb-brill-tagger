@@ -23,7 +23,7 @@ extern unsigned int Registry_entry_count(Registry);
 extern NORET Registry_fetch_contents(Registry, Darray, Darray);
 extern NORET Registry_destroy(Registry);
 extern int Registry_ptrcmp(CONSTVOIDP, CONSTVOIDP);
-extern unsigned int Registry_ptrhash(CONSTVOIDP, unsigned int);
+extern unsigned int Registry_ptrhash(CONSTVOIDP, unsigned long);
 extern int Registry_strcmp(CONSTVOIDP, CONSTVOIDP);
 extern unsigned int Registry_strhash(CONSTVOIDP, unsigned int);
 extern int Registry_strcasecmp(CONSTVOIDP, CONSTVOIDP);

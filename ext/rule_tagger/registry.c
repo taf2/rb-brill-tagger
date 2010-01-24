@@ -251,12 +251,12 @@ NORET Registry_destroy(dir)
 
 unsigned int Registry_ptrhash(ptr, htsize)
      CONSTVOIDP ptr;
-     unsigned int htsize;
+     unsigned long htsize;
 {
-  unsigned int uns_int_ptr = (unsigned int)ptr;
+  unsigned long uns_int_ptr = (unsigned long)ptr;
 
-  if ((int)uns_int_ptr > 0)
-    return htsize ? (int)uns_int_ptr % (int)htsize : 0;
+  if ((long)uns_int_ptr > 0)
+    return htsize ? (long)uns_int_ptr % (int)htsize : 0;
   else
     return htsize ? uns_int_ptr % htsize : 0;
 }
