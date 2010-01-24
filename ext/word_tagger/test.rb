@@ -1,12 +1,12 @@
 if $0 == __FILE__
 require 'test/unit'
-require 'tagger'
+require 'word_tagger'
 
 class NWordTest < Test::Unit::TestCase
 
   def setup
     if !defined?($tagger)
-      $tagger = Tagger::SimpleTagger.new
+      $tagger = Tagger::WordTagger.new
       $tagger.load_tags( File.read('../../tags.txt').split("\n") )
       $tagger.set_words( 4 );
     end

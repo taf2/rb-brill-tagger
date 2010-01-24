@@ -82,9 +82,8 @@ std::string NWordTagger::stemWord( const std::string &word )const
   return stemmed;
 }
   
-int NWordTagger::execute_with_frequency( const char *text, std::map<std::string,int> &matched_tags, int &max_count )const
+int NWordTagger::execute_with_frequency( const std::vector<std::string> &words, std::map<std::string,int> &matched_tags, int &max_count )const
 {
-  std::vector<std::string> words = word_split( text );
   std::string match_word;
   std::map<std::string,std::string>::const_iterator matched;
 
@@ -129,6 +128,11 @@ int NWordTagger::execute_with_frequency( const char *text, std::map<std::string,
     }
   }
   return matched_tags.size();
+}
+int NWordTagger::execute_with_frequency( const char *text, std::map<std::string,int> &matched_tags, int &max_count )const
+{
+  std::vector<std::string> words = word_split( text );
+  return execute_with_frequency(words, matched_tags, max_count);
 }
 
 int NWordTagger::execute( std::vector<std::string> &reduced_tags, const char *text, unsigned short max )const

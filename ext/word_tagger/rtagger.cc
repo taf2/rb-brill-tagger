@@ -36,13 +36,35 @@ VALUE Tagger_execute( VALUE self, VALUE text )
   }
   return results;
 }
+/*
+ * call-seq:
+ *    tagger.freq(['word1','word2','word3',...,n])  => {'word1' => 5, 'word2' => 10, ... }
+ *
+ * run the tagger against a body of text either as an array or as a string.  extract words of interest
+ * given the predefined set of tags.
+ */
 VALUE Tagger_execute_freq( VALUE self, VALUE text )
 {
   NWordTagger *tagger;
   Data_Get_Struct( self, NWordTagger, tagger );
   int max_count = 0;
   std::map<std::string,int> tags;
-  tagger->execute_with_frequency( RSTRING_PTR(text), tags, max_count );
+  if( TYPE(text) == T_STRING) {
+    tagger->execute_with_frequency( RSTRING_PTR(text), tags, max_count );
+  }
+  else if( TYPE(text) == T_ARRAY ) {
+    // convert ruby array to std vector
+    std::vector<std::string> words;
+    unsigned int len = RARRAY_LEN(text);
+    words.reserve(len);
+    for( unsigned int i = 0; i < len; ++i ) {
+      words.push_back(std::string(RSTRING_PTR(rb_ary_entry(text,i))));
+    }
+    tagger->execute_with_frequency( words, tags, max_count );
+  }
+  else {
+    rb_raise(rb_eRuntimeError, "Must provide either a string or array as input");
+  }
   VALUE results = rb_hash_new();
   for( std::map<std::string,int>::const_iterator it = tags.begin(); it != tags.end(); ++it ) {
     rb_hash_aset( results, rb_str_new(it->first.c_str(), it->first.length()), rb_int_new(it->second) );
