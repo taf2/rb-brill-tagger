@@ -55,3 +55,24 @@ desc "Test taggers"
 task :test => [:compile, :inttest]
 
 task :default => :test
+
+desc 'Generate gem specification'
+task :gemspec do
+  require 'erb'
+  tspec = ERB.new(File.read(File.join(File.dirname(__FILE__),'lib','rbtagger.gemspec.erb')))
+  File.open(File.join(File.dirname(__FILE__),'rbtagger.gemspec'),'wb') do|f|
+    f << tspec.result
+  end
+end
+require 'lib/rbtagger/version'
+CURRENT_VERSION = RbTagger::VERSION::STRING
+desc 'Build gem'
+task :package => :gemspec do
+  require 'rubygems/specification'
+  spec_source = File.read File.join(File.dirname(__FILE__),'rbtagger.gemspec')
+  spec = nil
+  # see: http://gist.github.com/16215
+  Thread.new { spec = eval("$SAFE = 3\n#{spec_source}") }.join
+  spec.validate
+  Gem::Builder.new(spec).build
+end

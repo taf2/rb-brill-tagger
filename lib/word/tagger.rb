@@ -1,5 +1,6 @@
+require 'word_tagger/word_tagger'
+
 module Word
-  require 'word_tagger'
   class Tagger < Tagger::WordTagger
     def initialize( tags, options = {} )
       if tags.is_a?(String) and File.exist?(tags)
