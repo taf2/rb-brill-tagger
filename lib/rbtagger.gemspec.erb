@@ -1,0 +1,41 @@
+Gem::Specification.new do |s|
+  s.name    = "curb"
+  s.authors = ["Todd A. Fisher"]
+  s.version = '<%= CURRENT_VERSION %>'
+  s.date    = '<%= Time.now.strftime("%Y-%m-%d") %>'
+  s.description = %q{A Simple Ruby Rule-Based Part of Speech Tagger}
+  s.email   = 'todd.fisher@gmail.com'
+  s.extra_rdoc_files = ['LICENSE', 'README']
+  <%
+    files = ['LICENSE', 'README', 'Rakefile','doc.rb'] +
+            Dir["lib/**/**.rb"] +
+            Dir["ext/**/**.c"] +
+            Dir["ext/**/**.cc"] +
+            Dir["ext/**/**.h"] +
+            Dir["ext/**/**.rb"]
+
+    if ENV['BINARY_PACKAGE']
+      files += Dir['ext/**/**.{o,so,bundle}']
+    end
+  %>
+  s.files = <%= files.inspect %>
+  #### Load-time details
+  s.require_paths = ['lib','ext']
+  s.rubyforge_project = 'curb'
+  s.summary = %q{Ruby libcurl bindings}
+  s.test_files = <%= Dir['tests/**/**.rb'].inspect %>
+  <% unless ENV['BINARY_PACKAGE'] %>
+    s.extensions << 'ext/extconf.rb'
+  <% end %>
+
+  #### Documentation and testing.
+  s.has_rdoc = true
+  s.homepage = 'http://curb.rubyforge.org/'
+  s.rdoc_options = ['--main', 'README']
+
+  <% if ENV['BINARY_PACKAGE'] %>
+    s.platform = Gem::Platform::CURRENT
+  <% else %>
+    s.platform = Gem::Platform::RUBY
+  <% end %>
+end
