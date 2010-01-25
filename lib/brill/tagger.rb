@@ -46,7 +46,7 @@ module Brill
         elsif tag.last.match(/NN/)
           phrase += tag
         else
-          phrases << phrase
+          phrases << phrase.flatten
           phrase = []
           mark = -1
         end
