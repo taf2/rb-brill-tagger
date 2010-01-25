@@ -168,8 +168,8 @@ int NWordTagger::execute( std::vector<std::string> &reduced_tags, const char *te
   do {
     for(mloc = sorted_tags.begin(); mloc != sorted_tags.end(); ++mloc ) {
       std::pair< std::string, int > word_freq = *mloc;
-      printf( "word: %s, frequency: %d\n", word_freq.first.c_str(), word_freq.second );
-      printf( "word: %s, frequency: %d\n", mloc->first.c_str(), mloc->second ); 
+      //printf( "word: %s, frequency: %d\n", word_freq.first.c_str(), word_freq.second );
+      //printf( "word: %s, frequency: %d\n", mloc->first.c_str(), mloc->second ); 
       if( word_freq.second < max_count ) { 
         sorted_tags.erase( mloc );
         break;
