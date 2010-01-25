@@ -142,6 +142,7 @@ TMZ.com: Britney celebrated getting overnights with her kids by going on a wild 
   def test_noun_phrases
     results = tagger.noun_phrases( SAMPLE_DOC )
     puts results.inspect
+    results.map{|phrase| puts phrase.inspect }
     puts 
     results = tagger.noun_phrases( SAMPLE_DOC2 )
     puts results.inspect

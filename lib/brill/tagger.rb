@@ -39,12 +39,12 @@ module Brill
         if phrase.empty?
           mark = i if tag.last.match(/PRP\$|DT/)
           if tag.last == 'NNP' and mark != -1
-            phrase = [ tags[mark..i] ]
+            phrase = tags[mark..i]
             #mark = -1
           end
           mark = -1 if i - mark > 8
         elsif tag.last.match(/NN/)
-          phrase << tag
+          phrase += tag
         else
           phrases << phrase
           phrase = []
