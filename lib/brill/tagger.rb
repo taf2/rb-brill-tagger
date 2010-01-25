@@ -26,6 +26,34 @@ module Brill
       tag(text).select{|t| t.last.match(/NN/) }
     end
 
+    # see: http://cpansearch.perl.org/src/ACOBURN/Lingua-EN-Tagger-0.15/Tagger.pm
+    def noun_phrases(text)
+      # ?:$PREP|$DET|$NUM)
+      # 
+      tags = tag(text.gsub(/[^\w]/,' '))
+      phrases = []
+      phrase = []
+      mark = -1
+
+      tags.each_with_index do|tag,i|
+        if phrase.empty?
+          mark = i if tag.last.match(/PRP\$|DT/)
+          if tag.last == 'NNP' and mark != -1
+            phrase = [ tags[mark..i] ]
+            #mark = -1
+          end
+          mark = -1 if i - mark > 8
+        elsif tag.last.match(/NN/)
+          phrase << tag
+        else
+          phrases << phrase
+          phrase = []
+          mark = -1
+        end
+      end
+      phrases
+    end
+
     # returns similar results as tag, but further reduced by only selecting nouns
     def suggest( text, max = 10 )
       tags = tag(text)
