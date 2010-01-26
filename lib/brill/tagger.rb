@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'rule_tagger/rule_tagger'
 
 module Brill
@@ -29,7 +31,7 @@ module Brill
     # see: http://cpansearch.perl.org/src/ACOBURN/Lingua-EN-Tagger-0.15/Tagger.pm
     def noun_phrases(text)
       # ?:$PREP|$DET|$NUM)
-      # 
+      #
       tags = tag(text.gsub(/[^\w]/,' '))
       phrases = []
       phrase = []
@@ -62,7 +64,7 @@ module Brill
       # join NNP's together for names
       reduced_tags = []
       mappings = {} # keep a mapping of the joined words to expand
-      tags.each{|tag| 
+      tags.each{|tag|
         if ptag.last == 'NNP' and tag.last == 'NNP' and !ptag.first.match(/\.$/)
           ptag[0] += " " + tag.first
           # before combining these two create a mapping for each word to each word
@@ -119,7 +121,7 @@ module Brill
     end
 
     # Tag a body of text
-    # returns an array like [[token,tag],[token,tag]...[token,tag]] 
+    # returns an array like [[token,tag],[token,tag]...[token,tag]]
     #
     def tag( text )
       # XXX: the list of contractions is much larger then this... find'em
@@ -130,14 +132,14 @@ module Brill
 
       @tagger.apply_lexical_rules( tokens, tags, [], 0 )
       @tagger.default_tag_finish( tokens, tags )
- 
+
       # Brill uses these fake "STAART" tags to delimit the start & end of sentence.
-      tokens << "STAART" 
-      tokens << "STAART" 
+      tokens << "STAART"
+      tokens << "STAART"
       tokens.unshift "STAART"
       tokens.unshift "STAART"
-      tags << "STAART" 
-      tags << "STAART" 
+      tags << "STAART"
+      tags << "STAART"
       tags.unshift "STAART"
       tags.unshift "STAART"
 
@@ -166,7 +168,7 @@ module Brill
       end
       lines
     end
-    # load LEXICON 
+    # load LEXICON
     def self.load_lexicon(tagger,lexicon)
       lines = Brill::Tagger.lines(lexicon)
       i = 0
@@ -187,7 +189,7 @@ module Brill
       end
     end
 
-    # load LEXICALRULEFILE 
+    # load LEXICALRULEFILE
     def self.load_lexical_rules(tagger,rules)
       lines = self.lines(rules)
       i = 0
@@ -273,7 +275,7 @@ module Brill
       # Isolate any embedded punctuation chars
       #   s{([,;:\@\#\$\%&])} { $1 }g;
       text.gsub!(/([,;:\@\#\$\%&])/, ' \1 ')
-  
+
       # Assume sentence tokenization has been done first, so split FINAL
       # periods only.
       # s/ ([^.]) \.  ([\]\)\}\>\"\']*) [ \t]* $ /$1 .$2 /gx;
@@ -329,7 +331,7 @@ module Brill
       text.gsub!(/ (\'t)(is|was) /i,' \1 \2 ')
       #s/ (wan)(na) / $1 $2 /ig;
       text.gsub!(/ (wan)(na) /i,' \1 \2 ')
- 
+
       text.split(/\s/)
     end
 
