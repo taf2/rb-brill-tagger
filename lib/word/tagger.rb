@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'word_tagger/word_tagger'
 
 module Word

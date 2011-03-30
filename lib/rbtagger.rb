@@ -1,3 +1,4 @@
+# encoding: utf-8
 module RbTagger
   class << self
     def tags_from_file( file )
