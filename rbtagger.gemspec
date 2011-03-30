@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name    = "rbtagger"
   s.authors = ["Todd A. Fisher"]
-  s.version = '0.4.6'
-  s.date    = '2010-01-25'
+  s.version = '0.4.7'
+  s.date    = '2011-03-30'
   s.description = %q{A Simple Ruby Rule-Based Part of Speech Tagger}
   s.email   = 'todd.fisher@gmail.com'
   s.extra_rdoc_files = ['LICENSE', 'README']

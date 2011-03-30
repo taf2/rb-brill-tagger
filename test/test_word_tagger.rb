@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/test_helper'
+# encoding: utf-8
+$:.unshift File.expand_path(File.dirname(__FILE__))
+require 'test_helper'
 
 class TestWordTagger < Test::Unit::TestCase
   

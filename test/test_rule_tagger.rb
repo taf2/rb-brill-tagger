@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/test_helper'
+# encoding: utf-8
+$:.unshift File.expand_path(File.dirname(__FILE__))
+require 'test_helper'
 
 
 class TestRuleTagger< Test::Unit::TestCase
@@ -24,6 +26,7 @@ Allow yourself time to discuss the emotional consequences of your illness and tr
 Stay connected
 Although many newly diagnosed patients fear they will not be able to keep working during treatment, this is usually not the case. Working, even at a reduced schedule, helps you maintain valuable social connections and weekly structure.
 )
+
 SAMPLE_DOC2=%q(
 Britney Spears was granted a change in her visitation schedule with her sons Sean Preston and Jayden James at a hearing Tuesday.
 "There was a change in visitation status that was ordered by Commissioner Gordon this morning," Los Angeles Superior Court spokesperson Alan Parachini confirmed after the hearing, which both Kevin Federline and her father (and co-conservator) Jamie Spears attended. (Britney and Kevin did not address each other during the hearing.)
